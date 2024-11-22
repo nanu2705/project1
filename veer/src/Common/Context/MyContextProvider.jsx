@@ -9,7 +9,7 @@ const MyContextProvider = ({ children }) => {
   const location = useLocation()
 
   //for backend calling api start
-  const url = "https://project1-3ws1.vercel.app/?vercelToolbarCode=CbwCAlOsjhakDOU"
+  const url = "http://localhost:3034"
 
   // for login drawer open start
   const [isOpen, setIsOpen] = useState(false)
@@ -47,6 +47,8 @@ const MyContextProvider = ({ children }) => {
 
   const [pageData, setPageData] = useState(null);
   const [countryName, setCountryName] = useState(null);
+
+  const [idproof,setIdproof] =useState(null)
   // for dynamic coutrypage data end
 
 
@@ -543,6 +545,11 @@ const onPhotoUpload = (event) => {
     document.querySelector('body').style.overflow='hidden'
   }
 
+  const socketC=()=>{
+    setSockets(false)
+    document.querySelector('body').style.overflow='auto'
+  }
+
   
   //for socket page start
   const [message, setMessage] = useState('');
@@ -556,11 +563,13 @@ const onPhotoUpload = (event) => {
     const [error, setError] = useState('');
   //for admin panel end
 
+  
+
   return (
     <MyContext.Provider value={{
-      title,setTitle,opensearch,setOpensearch,username, setUsername,error, setError,
+      title,setTitle,opensearch,setOpensearch,username, setUsername,error, setError,idproof,setIdproof,
       passmodel,setPassmodel,sockets,setSockets,messages, setMessages,message, setMessage,
-      photofile,setPhotofile,file,setFile,sname,setSname,cname,setCname,handleO,handleC,socketO,
+      photofile,setPhotofile,file,setFile,sname,setSname,cname,setCname,handleO,handleC,socketO,socketC,
       onPassportUpload ,onPassportbackUpload,onPhotoUpload,quntity, setQuntity,saveform,setSaveform,
       selectedDate, setSelectedDate,uploadedPhoto, setUploadedPhoto,uploadedPassport,setUploadedPassport,uploadedbackPassport,setUploadedbackPassport,
       cb,setCb,changedetails,entryPrice, setEntryPrice,totalprice,setTotalprice,saveemail,setSaveemail,setSavemobile,savemobile,

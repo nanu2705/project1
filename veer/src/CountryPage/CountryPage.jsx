@@ -25,7 +25,7 @@ import { RxCross2 } from "react-icons/rx";
 const CountryPage = () => {
 
     const { entryPrice,quntity,totalprice, setTotalprice,setQuntity, setEntryPrice,api, setPageData,setCountryName,pageData,
-           countryName,Navigate,setSaveform,saveform,setCname,setSname} = useContext(MyContext);
+           countryName,Navigate,setSaveform,saveform,setCname,setSname,idproof,setIdproof} = useContext(MyContext);
 
     const{ servicename,countryname } = useParams();
 
@@ -110,32 +110,53 @@ const CountryPage = () => {
       </Helmet>
      
      
-            <div className="country-left">
+     {
+      
+       ["visitor-visa", "student-visa", "work-visa"].includes(pageData?.name) ?(
+       <>
 
-            <Carousel
-            autoPlay={true}
-            autoPlaySpeed={3000}
-            infinite={true}
-            draggable={false}
-            pauseOnHover={false}
-            arrows={false}
-            responsive={Responsive} className='carousel'>
-            <img src={images[0]} alt="" />
-            <img src={images[1]} alt="" />
-            <img src={images[2]} alt="" />
-            <img src={images[3]} alt="" />
-            <img src={images[4]} alt="" />
-          </Carousel>
-            </div>
+       <div className="country-left">
+
+       <Carousel
+       autoPlay={true}
+       autoPlaySpeed={3000}
+       infinite={true}
+       draggable={false}
+       pauseOnHover={false}
+       arrows={false}
+       responsive={Responsive} className='carousel'>
+       <img src={images[0]} alt="" />
+       <img src={images[1]} alt="" />
+       <img src={images[2]} alt="" />
+       <img src={images[3]} alt="" />
+       <img src={images[4]} alt="" />
+     </Carousel>
+       </div>
+       </>):(
+         <div className='country-left'>
+          <img src={images[0]} alt="" />
+         </div>
+       )
      
-           
+     }
+                 
           <div className='pricing-container'>
 
             <div className='first'>
+           { ["visitor-visa", "student-visa", "work-visa"].includes(pageData?.name) ?(
+              <>
               <div className='title'>
              <FaUserGroup  />
-               <span>Travellers</span>
+               <span>Traveller</span>
               </div>
+              </>):(
+              <div className='title'>
+              <FaUserGroup  />
+              <span>People</span>
+              </div>
+              )
+
+           }
               <div className='signs'>
                 <CiCircleMinus onClick={handleMinus}  />
                 <span>{quntity}</span>
@@ -185,13 +206,17 @@ const CountryPage = () => {
           <div className="box-container"> 
 
 
-<div className='df'>
-  <div className='all-content'>
+               <div className='df'>
+             <div className='all-content'>
 
-    <div className='info-container'>
-      <div className='docs'>
+              <div className='info-container'>
+              <div className='docs'>
         <h2>Documents Required for {countryname}</h2>
         <div className='line'></div>
+        {
+        ["visitor-visa", "student-visa", "work-visa"].includes(pageData?.name) ?
+        (<>
+
         <div className='docs-content'>
           {
             pageData?.country
@@ -208,13 +233,57 @@ const CountryPage = () => {
 
           }
         </div>
+        </>):
+        (<div className='docs-contents'>
+          {
+            pageData?.country
+              .filter((item) => item.name === countryName)
+              .map((item, index) => {
+                return (
+                  <>
+                  {item.documents?.map((doc) => {
+                    return(
+                     <div key={doc.id}>
+                      <h3  onMouseEnter={() => setIdproof(doc.id)} 
+                          onMouseLeave={() => setIdproof(null)}>
+                            
+                            {doc.name}</h3>
+                      
+                      {idproof === doc.id &&
+                      <div>
+                        {doc.container
+                         .filter((containerItem) => containerItem.id === doc.id)
+                        .map((containerItem) => {
+                          return (
+                            <li key={containerItem.id}>
+                              {containerItem.name}
+                              </li>
+                          )
+                        }
+                        )}
+                        </div>
+                  }
+                    </div>
+                    )
+                  }
+                  )}
+                </>
+                
+                )
+              })
 
+          }
+        </div>)
+        }
       </div>
+
+
+
       {
-        ["visitor-visa", "student-visa", "work-visa"].includes(pageData?.name) &&
+        ["visitor-visa", "student-visa", "work-visa","passport"].includes(pageData?.name) &&
 
         <div className='info'>
-          <h2>{countryName} Visa information</h2>
+          <h2>{countryName}  information</h2>
           <div className='line'></div>
 
           <div className='container'>
@@ -224,6 +293,10 @@ const CountryPage = () => {
                 .map((item) => {
                   return (
                     <>
+
+                      {
+                        ["visitor-visa", "student-visa", "work-visa"].includes(pageData?.name)?(
+                          <>
                       <div className='info-content'>
                         <div className='info-icon'>
                           <img src={visa} alt="visa" />
@@ -235,6 +308,23 @@ const CountryPage = () => {
                           }
                         </div>
                       </div>
+                      </>):
+                      (<div className='info-content'>
+                        <div className='info-icon'>
+                          <img src={visa} alt="visa" />
+                        </div>
+                        <div className='kv'>
+                          <span className='r'>PassportType:</span>
+                          {
+                            <span className='b'>{item.visaInformation?.visaType}</span>
+                          }
+                        </div>
+                      </div>)
+                        }
+
+                      {
+                        ["visitor-visa", "student-visa", "work-visa"].includes(pageData?.name)?(
+                          <>
                       <div className='info-content'>
                         <div className='info-icon'>
                           <img src={calendar} alt="visa" />
@@ -246,7 +336,24 @@ const CountryPage = () => {
                           }
                         </div>
                       </div>
-                      <div className='info-content'>
+                      </>):
+                      ( <div className='info-content'>
+                        <div className='info-icon'>
+                          <img src={calendar} alt="visa" />
+                        </div>
+                        <div className='kv'>
+                          <span className='r'>Time Duration:</span>
+                          {
+                            <span className='b'>{item.visaInformation?.lengthOfStay}</span>
+                          }
+                        </div>
+                      </div>)
+                        }
+
+                      {
+                        ["visitor-visa", "student-visa", "work-visa"].includes(pageData?.name)?(
+                          <>
+                            <div className='info-content'>
                         <div className='info-icon'>
                           <img src={stopwatch} alt="visa" />
                         </div>
@@ -257,7 +364,16 @@ const CountryPage = () => {
                           }
                         </div>
                       </div>
-                      <div className='info-content'>
+                          </>):
+                          ('')
+                      }
+                      
+
+
+                      {
+                         ["visitor-visa", "student-visa", "work-visa"].includes(pageData?.name)?(
+                         <>
+                        <div className='info-content'>
                         <div className='info-icon'>
                           <img src={entry} alt="visa" />
                         </div>
@@ -268,6 +384,11 @@ const CountryPage = () => {
                           }
                         </div>
                       </div>
+                         </>):(
+                          ''
+                         )
+                      }
+                      
                     </>
                   )
                 })
@@ -278,8 +399,10 @@ const CountryPage = () => {
         </div>
       }
     </div>
+
+
     {
-      ["visitor-visa", "student-visa", "work-visa"].includes(pageData?.name) &&
+      ["visitor-visa", "student-visa", "work-visa","passport"].includes(pageData?.name) &&
       <div className='process-container'>
         <h2>How {countryName} Process Work</h2>
         <div className='line'></div>
@@ -292,11 +415,11 @@ const CountryPage = () => {
           <div className='step'>
             <p>Step 2</p>
             <h4>Your Documents Are Verified</h4>
-            <span>Our team verifies your documents and submits to Immigration</span>
+            <span>Our team verifies your documents</span>
           </div>
           <div className='step'>
             <p>Step 3</p>
-            <h4>Your Visa Gets Processed</h4>
+            <h4>Your {countryName} Gets Processed</h4>
             <span>We work with Immigration to ensure you get your visa on time.</span>
             <div className='step'>
               <h5>1. Application has been sent to the immigration supervisor</h5>
@@ -305,14 +428,14 @@ const CountryPage = () => {
           </div>
           <div className='step'>
             <p>Step 4</p>
-            <h4>Get Your Visa</h4>
+            <h4>Get Your {countryName}</h4>
           </div>
         </div>
       </div>
     }
 
     {
-      ["visitor-visa", "student-visa", "work-visa"].includes(pageData?.name) &&
+      ["visitor-visa", "student-visa", "work-visa","passport"].includes(pageData?.name) &&
       <div className='resons-container'>
         <h2>{countryName} Visa Rejection Reasons</h2>
         <div className='line'></div>

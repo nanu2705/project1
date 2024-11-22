@@ -3,7 +3,7 @@ import './Socket.scss';
 import MyContext from '../../Common/Context/MyContext';
 
 const Socket = () => {
-  const { sockets, setSockets } = useContext(MyContext);
+  const { sockets, socketC } = useContext(MyContext);
   const [visibleAnswer, setVisibleAnswer] = useState(null);
   const [relatedAnswer, setRelatedAnswer] = useState(null);
 
@@ -80,7 +80,7 @@ const Socket = () => {
           <div className="socket-overlay">
             <div className="socket-content">
               <div className="socket-head">
-                <span className="cancel-icon" onClick={() => setSockets(false)}>
+                <span className="cancel-icon" onClick={socketC}>
                   &times;
                 </span>
                 <h5>What do you want to know?</h5>
