@@ -1,0 +1,146 @@
+@import '../Mixin.scss';
+
+.logout-overlay{
+overflow: hidden;
+width: 100%;
+position:fixed;
+
+top: 0px;
+right: 0;
+height: 100vh;
+background-color: rgba(0, 0, 0, 0.019);
+z-index: 1000;
+
+@include max800{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+    
+  .drop-list{
+    position:absolute;
+    top: 65.5px;
+    right: 55px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: fit-content;
+    padding: 0 10px;
+    text-align: start;
+    border: 1px solid  rgba(0, 0, 0, 0.073);
+    border-radius: 0px  0 18px 18px ;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+ 
+  
+  
+
+   .dropP{
+  
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    
+    gap: 10px;
+    cursor: pointer;
+
+    @include max800{
+      transition: background-color 0.2s;
+    }
+    
+    .dropI{
+  
+    
+     img{
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      margin-right: 15px;
+         }
+     
+    }
+
+    .dropC{
+      margin-top: 20px;
+      padding: 5px 0;
+      display: flex;
+      flex-direction: column;
+ 
+     span{
+      line-height: 5px;
+
+      @include max525{
+        line-height: 20px;
+      }
+     }
+      p{
+      line-height: 20px;
+
+        color: #3C3C4399;
+      }
+    }
+ 
+   
+   }
+ 
+    @include max767{
+      position: fixed;
+      top: 60px;
+    
+    }
+
+    @include max800{
+      animation: slide-up 0.5s ease-in-out;
+    }
+
+    @include m945{
+      position: fixed;
+      top: 0px;
+
+     
+    }
+
+    @include max650{
+      position: fixed;
+      top: 20%;
+      width: 300px;
+      
+    }
+
+    @include max450{
+   position: fixed;
+   left: 30px;
+   width: 280px;
+    }
+
+    @include max370{
+      position: fixed;
+      left: 50px;
+      width: 210px;
+    }
+    @include m1000{
+        position:absolute;
+        top: 6%;
+        right: 9%;
+    }
+    li{
+    
+     
+        list-style: none;
+        cursor: pointer;
+        background:none;
+
+    }
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+&::placeholder{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}

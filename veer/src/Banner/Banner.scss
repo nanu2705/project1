@@ -1,0 +1,73 @@
+@import "../Common/Mixin.scss";
+
+.bi {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  height: calc(100vh - 150px);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+
+  background: rgba(231, 228, 228, 0.726) url("../Assets/images/plane.png") no-repeat center;
+  background-size: cover;
+  background-blend-mode: lighten;
+
+  @include max650 {
+    // height: 100vh;
+    height: calc(100vh - 160px);
+    
+  }
+
+ 
+
+    .heading {
+      max-width: 1200px;
+      margin: 20px 20px;  
+      height: fit-content; 
+      text-align: center;
+      // background-color: red;
+      .b-heading {
+        
+        font-size: 50px;
+        line-height: normal;
+        color: #2c3f69;
+       @include max525{
+        font-size: 35px; 
+       }
+       
+      }
+      .b-span {
+        font-size: 20px;
+        font-weight: 500;
+        color: black;
+        @include max525{
+          font-size: 18px; 
+         }
+        
+      }
+
+
+    }
+  
+
+  .second {
+    
+    max-width: 1200px;
+    margin: 0 auto;
+    position: absolute;
+    bottom:-20px;
+    height: fit-content;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    @include max525{
+      bottom: -50px;
+      margin: 0 20px;
+    }
+
+  }
+}

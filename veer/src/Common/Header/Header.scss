@@ -1,0 +1,347 @@
+@import "../Mixin.scss";
+header {
+  width: 100%;
+  border-bottom: 0.3px solid rgba(0, 0, 0, 0.073);
+  position: sticky;
+
+  // position: relative;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+
+  @include max650 {
+    // position: relative;
+    z-index: 100;
+  }
+  .header {
+    box-sizing: border-box;
+    background-color: white;
+    padding: 12px 0px 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+      font-weight: 700;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      color: #000000c8;
+      line-height: normal;
+      transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+
+      &:nth-child(1) {
+        @include m606 {
+          display: none;
+        }
+      }
+
+      &:nth-child(2) {
+        display: none;
+        @include m606 {
+          display: block;
+        }
+      }
+
+      @include m810 {
+        font-size: 20px;
+      }
+
+      @include m720 {
+        font-size: 16px;
+      }
+    }
+
+    .center {
+      border: 0.3px solid rgba(0, 0, 0, 0.073);
+      padding: 5px 10px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: rgba(0, 0, 0, 0.023);
+      width: 390px;
+      cursor: text;
+      transition: all 0.3s ease;
+
+      @include m945 {
+        width: 250px;
+      }
+
+      @include m720 {
+        width: 200px;
+      }
+      @include m606 {
+        display: none;
+      }
+
+      .icon {
+        display: flex;
+        align-items: center;
+        svg {
+          font-weight: 900;
+          font-size: 19px;
+        }
+      }
+
+      .search {
+        color: rgba(0, 0, 0, 0.5);
+        margin-bottom: 4px;
+      }
+
+      .animate {
+        animation: text-fade 1s ease-in-out;
+      }
+    }
+
+    .right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      @include max625 {
+        gap: 8px;
+      }
+      
+      @include max525 {
+        gap: 0px;
+      }
+.passport-apply{
+  position: relative;
+
+      .btn1 {
+        border: 1px solid #ff00005a;
+        background-color: #ff0000;
+        color: rgb(255, 255, 255);
+       padding: 0px 0px;
+       border-radius: 10px;
+       padding: 10px 0px;
+       width: 150px;
+       cursor: pointer;
+    
+
+        @include max1024 {
+          padding: 8px 0px;
+        }
+        @include max625 {
+          padding: 10px 0;
+          font-size: 14px;
+          
+        }
+
+        @include max525{
+          padding: 4px;
+         width: 90px;
+         font-size: 12px;
+        }
+
+        &:hover {
+          border: 1px solid #ff00005a;
+          background-color: transparent;
+          color: rgb(0, 0, 0);
+        }
+      }
+
+    
+    }
+      .explore{
+        border: 1px solid #DDE2E4;
+        background-color: white;
+        border-radius: 10px;
+        padding: 10px 0px;
+        color: #252C32;
+        width: 90px;
+        margin: 0 20px;
+        cursor: pointer;
+
+        @include max525{
+          padding: 10px;
+         width: 90px;
+         font-size: 12px;
+        }
+      }
+     
+    }
+
+    // for search center
+
+    .centers {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      @include m606 {
+        display: none;
+      }
+
+      input {
+        color: #000000c0;
+        padding: 14px 35px;
+        border-radius: 10px;
+        font-size: 16px;
+        width: 750px;
+        cursor: text;
+        border: 1px solid rgba(0, 0, 0, 0.279);
+        transition: all 0.3s ease;
+
+        &:focus {
+          outline: 0;
+        }
+
+        &::placeholder {
+          color: rgba(0, 0, 0, 0.4);
+        }
+
+        @include m1270 {
+          width: 500px;
+        }
+
+        @include m1000 {
+          width: 350px;
+        }
+
+        @include m945 {
+          width: 250px;
+        }
+
+        @include m720 {
+          width: 200px;
+        }
+      }
+
+      svg {
+        position: absolute;
+
+        left: 10px;
+        font-weight: 900;
+        font-size: 19px;
+      }
+    }
+  }
+}
+// for search bar in mobile
+
+.centerm {
+  border: 0.3px solid rgba(0, 0, 0, 0.073);
+  padding: 7px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin: 10px 16px;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.023);
+
+  cursor: text;
+  transition: all 0.3s ease;
+  display: none;
+
+  @include m606 {
+    display: flex;
+  }
+
+  svg {
+    font-weight: 900;
+    font-size: 19px;
+  }
+
+  .animate {
+    animation: text-fade 1s ease-in-out;
+  }
+}
+
+// for search center
+
+.centermo {
+  position: relative;
+  display: none;
+  align-items: center;
+
+  @include m606 {
+    display: flex;
+  }
+
+  input {
+    border: 1px solid rgba(0, 0, 0, 0.279);
+    padding: 14px 35px;
+    width: 100%;
+    color: #000000c0;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+
+    cursor: text;
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  svg {
+    position: absolute;
+
+    left: 20px;
+    font-weight: 900;
+    font-size: 19px;
+  }
+}
+
+@keyframes text-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+//for logout confirm
+
+.logout-confirm {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #cccccc34;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  text-align: center;
+
+  @include max345 {
+    padding: 10px;
+  }
+
+  .confirm-btn,
+  .cancel-btn {
+    margin: 10px;
+    padding: 5px 10px;
+    border: 1px solid rgba(128, 128, 128, 0.022);
+    border-radius: 5px;
+    background-color: rgba(255, 0, 0, 0.666);
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #8c8d8e5a;
+    }
+  }
+
+  .cancel-btn {
+    background-color: rgba(255, 0, 0, 0.666);
+  }
+}

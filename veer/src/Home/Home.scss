@@ -1,0 +1,26 @@
+@import "../Common/Mixin.scss";
+
+.home {
+  width: 100%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ 
+
+  .cards-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    // border: 1px solid red;
+    padding: 30px;
+
+    @include min650 {
+   
+      padding: 50px 30px;
+    }
+
+    @include max1024 {
+      padding: 16px;
+    }
+  }
+}

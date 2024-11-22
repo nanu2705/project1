@@ -1,0 +1,54 @@
+@import "../Mixin.scss";
+
+.lbox-main {
+  width: 100%;
+  // margin: 40px 0;
+  // padding: 16px;
+  box-sizing: border-box;
+
+  .lbox-content {
+    display: flex;
+    // justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    // border: 1px solid rgba(0, 0, 0, 0.059);
+    border-radius: 10px;
+    justify-content: center;
+    @include max767 {
+      justify-content: center;
+    }
+
+    .lbox-left {
+      height: auto;
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      display: none;
+
+      @include max767 {
+        display: none;
+      }
+
+      span {
+        padding: 15px 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.059);
+        cursor: pointer;
+      }
+    }
+
+    .lbox-right {
+      border-left: 1px solid rgba(0, 0, 0, 0.059);
+      height: fit-content;
+      // width: 90%;
+      width: 100%;
+      // padding: 0px 40px;
+      border: none;
+
+      @include max767 {
+        // padding: 10px 0px;
+        border: none;
+      }
+    }
+  }
+}

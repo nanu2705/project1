@@ -1,0 +1,91 @@
+@import '../Mixin.scss';
+
+.review-main{
+
+    width: 100%;
+
+    .review-content{
+
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+       flex-direction: column;
+       justify-content: center;
+       text-align: center;
+      
+            span{
+               
+                height: 40px;
+               padding: 50px;
+                font-size: 25px;
+            }
+      
+        .review-slider{
+ 
+       
+          padding: 10px 50px;
+    
+
+          .card-box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 350px;
+            width:300px;
+            border: 1px solid rgba(98, 98, 101, 0.2);
+            border-radius: 50px;
+            padding: 10px 10px;
+            box-shadow: inset 8px 8px 5px 2px rgba(0, 0, 0, 0.049);
+          
+          
+          
+            .in-name{
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+                margin-top: 20px;       
+               
+
+                .span{
+                  
+                    border: 1px solid rgba(128, 128, 128, 0.063);
+                    border-radius: 100%;
+                    width:30px;
+                    height: 30px;
+                    background-color: rgba(111, 106, 106, 0.112);
+                    padding: 10px;
+                }
+
+                p{
+              
+                 font-size: 20px;
+                }  
+            }
+            .rcontent{
+                display: -webkit-box;
+                // -webkit-line-clamp: 6;      /* Number of lines to show before truncation */
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-align: start;
+                padding: 0 10px;
+                color: gray;
+               
+            }
+          }
+
+         
+        }
+        }
+
+
+     
+        }
+// from css of npm
+        li{
+            display: flex;
+            justify-content: space-between;
+
+        }
+   

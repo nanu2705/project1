@@ -1,0 +1,112 @@
+@import '../Mixin.scss';
+
+
+.search-mains{
+  width: 100%;
+
+.search-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-flow: wrap;
+ 
+
+.recent-searches {
+
+ h3 {
+  font-size: 18px;
+  margin: 10px;
+  color: #333;
+ 
+}
+
+.keyword {
+ 
+  display:flex;
+  flex-flow: wrap;
+  cursor: pointer;
+ padding: 10px;
+  
+
+.keyword-box {
+
+  background-color: rgba(0,0,0,0.04);
+  padding: 0px 8px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 1px solid rgba(128, 128, 128, 0.223);
+  border-radius: 10px;
+  font-size: 14px;
+   
+  span{
+    padding: 0 5px;
+  }
+
+
+
+       &  :hover {
+         background-color: #e0e0e0; 
+          }
+       }
+  
+}
+}
+
+
+.search-list {
+flex-flow: wrap;
+  z-index: 10;
+  height: 440px;
+  overflow: hidden;
+  // background-color: pink;
+  width: 440px;
+  position: relative;
+  left: 15%;
+ 
+
+  @include m1270{
+       width: 330px;
+       position: relative;
+       left: 27%;
+  }
+
+  @include m1000{
+    width: 330px;
+    position: relative;
+    left: 30%;
+  }
+
+  @include m606{
+    position: relative;
+    left: 2%;
+  }
+
+  
+
+
+
+ul{
+  // background-color: red;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 6px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+   &:hover {
+  background-color: #e0e0e042;
+}
+
+  li{
+
+    svg{
+
+      padding: 2px 7px;
+    }
+  }
+}
+ 
+}
+}
+}

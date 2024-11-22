@@ -1,0 +1,47 @@
+@import "../Mixin.scss";
+
+.alert {
+  position: fixed;
+  top: 130px;
+  z-index: 9999;
+  right: 3%;
+  border-radius: 5px;
+  padding: 9px 18px;
+  color: white;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 5px;
+  max-width: 300px;
+  color: black;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  .e-icon {
+    font-size: 28px;
+  }
+
+  .s-icon {
+    font-size: 24px;
+  }
+
+  @include max1024 {
+    top: 90px;
+  }
+
+  @include max650 {
+    top: 6%;
+    font-size: 12px;
+    padding: 8px 10px;
+    max-width: 250px;
+
+    .e-icon {
+      font-size: 20px;
+    }
+
+    .s-icon {
+      font-size: 18px;
+    }
+  }
+}

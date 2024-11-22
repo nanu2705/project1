@@ -1,0 +1,139 @@
+@import "../../Common//Mixin.scss";
+
+.error-page {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: calc(100vh - 110px);
+  width: 100%;
+  color: black;
+  text-align: center;
+  padding-top: 70px;
+ 
+
+  @include max650 {
+    height: calc(100vh - 250px);
+  }
+  .error-content {
+    max-width: 1200px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  
+
+    @include max650 {
+      width: 280px;
+      border: none;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    img {
+      height: 80px;
+      width: 80px;
+      @include max650 {
+        height: 40px;
+        width: 40px;
+      }
+    }
+
+    .error-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 5px 28px;
+      border-radius: 7px;
+      background-color: #FEF2F2;
+      color: #991B1B;
+      font-family: Manrope;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+      margin-bottom: 8px;
+
+      @include max650 {
+        font-size: 20px;
+      }
+    }
+
+    .error-message {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #191D23;
+      @include max650 {
+        
+      }
+    }
+
+    .error-code {
+      font-size: 17px;
+      margin-bottom: 30px;
+      color: #64748B;
+    cursor: pointer;
+    font-family: Manrope;
+    }
+
+    .error-search{
+      position: relative;
+      border: none;
+
+   
+        svg{
+        position: absolute;
+        top: 10px;
+        left: 0px;
+        padding: 0 10px;
+        }
+      input{
+        padding: 10px 30px;
+        width: 420px;
+        border:1px solid #D9D9D9;
+        border-radius: 20px;
+
+        @include max525{
+       
+   width: 250px;
+        }
+      }
+
+      p{
+        position: absolute;
+        right: 30px;
+        top: 3px;
+        font-size: 13px;
+    cursor: pointer;
+      }
+
+    
+    }
+
+    .search-list{
+      border: 1px solid #D9D9D9;
+      width: 467px;
+      position: absolute;
+     top: 67%;
+     height: 250px;
+     overflow: hidden;
+     border-top: none;
+     
+     @include max525{
+      height: 200px;
+      width: 300px;
+           }
+
+      .error-list{
+      cursor: pointer;
+     
+
+    }
+    }
+   
+  }
+}

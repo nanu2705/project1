@@ -1,0 +1,176 @@
+@import "../Common/Mixin.scss";
+footer {
+  width: 100%;
+  background-color: white;
+  .footer-part {
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    min-height: 300px;
+    background-color: white;
+    color: black;
+    padding: 60px 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 19px;
+
+    @include d900 {
+      padding: 60px 30px;
+    }
+
+    .f-content {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 10px;
+
+      .fheading {
+        font-size: 18px;
+        margin-top: 7px;
+      }
+
+      .f-line {
+        width: 60%;
+        border-bottom: 1px solid gray;
+      }
+
+      .f-item {
+        display: flex;
+
+        a {
+          text-decoration: none;
+        }
+
+        &:hover {
+          span {
+            color: red;
+            transition: 0.3s;
+          }
+        }
+
+        .c-btn {
+          border-radius: 20px;
+          outline: none;
+          padding: 8px 15px;
+          background-color: #ff0000;
+          border: 1px solid #ff0000;
+
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+          align-items: center;
+          cursor: pointer;
+
+          &:hover {
+            transition: 0.3s;
+            border: 1px solid #ff00005a;
+            background-color: white;
+            div {
+              color: black;
+              background-color: white;
+            }
+            span {
+              color: black;
+            }
+          }
+
+          div {
+            padding: 2px 8px;
+            background-color: white;
+            color: #ff0000;
+            border-radius: 50%;
+          }
+
+          span {
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+          }
+        }
+
+        .logo {
+          color: #ff0000;
+          font-size: 20px;
+          cursor: pointer;
+        }
+        p {
+          margin: 0;
+          font-size: 15px;
+          color: gray;
+        }
+        span {
+          font-size: 15px;
+          color: gray;
+          cursor: pointer;
+        }
+
+        .newsletter {
+          display: flex;
+          gap: 10px;
+
+          .nform {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            .form-field {
+              margin-bottom: 10px;
+              display: flex;
+              flex-direction: column;
+
+              input {
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 14px;
+                transition: all 0.3s ease;
+
+                &::placeholder {
+                  opacity: 0.8;
+                  text-align: center;
+                  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                  
+                }
+
+                &:focus {
+                  border-color: #f04;
+                  box-shadow: 0 0 5px rgba(240, 4, 4, 0.5);
+                  outline: none;
+                }
+              }
+            }
+
+            .nsubmit-button {
+              padding: 10px;
+              background-color: #ff0000;
+              color: white;
+              font-size: 15px;
+              font-weight: 500;
+              border: none;
+              border-radius: 4px;
+              border: 1px solid #ff0000;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+              
+              
+
+              &:hover {
+                // background-color: white;
+                opacity: 0.9;
+                border: 1px solid #ff0000;
+                color: black;
+              }
+            }
+
+            .error {
+             padding: 4px 0; 
+              color: red;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@import '../Mixin.scss';
+
+.batch{
+    position: fixed;
+    top: 40%;
+    left: 0;
+    z-index: 9999;
+   
+    @include m680{
+        display: none;
+    }
+    
+
+    .left{
+        width: 20px;
+        height: 1px;
+        background-color: #FF0000;
+
+    }
+
+    .left-one{
+        width: 20px;
+        height: 0.5px;
+        background-color: #FF0000; 
+        transform: rotate(30deg); 
+        position: absolute;
+        left: 18.3px;
+        top: 5.13px;
+
+    }
+
+    .left-two{
+        width: 20.8px;
+        height: 0.5px;
+      background-color: #FF0000; 
+        transform: rotate(90deg); 
+        position: absolute;
+        left: 25.9px;
+        top: 20px;
+
+    }
+
+    .center{
+        width: fit-content;
+        height: fit-content;
+       border: 1px solid #FF0000;
+       padding: 10px 1px;
+       letter-spacing: 6px;
+       font-weight: 600;
+       background: linear-gradient(30deg, #ff0000c8 10%, white 60%); 
+       font-size: 10px;
+        writing-mode: vertical-lr;
+        text-transform: uppercase;
+        text-orientation: sideways;
+        // transform: rotate(180deg);
+        font-family: monospace;
+        position: absolute;
+        left: 25.9px;
+        top: 30px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover{
+            background:#FF0000;
+            color: white;
+        }
+      
+    }
+
+    .right{
+        width: 33px;
+        height: 0.5px;
+      background-color: #FF0000; 
+        transform: rotate(90deg); 
+        position: absolute;
+        left: 19px;
+        top: 148.4px;
+
+    }
+
+    .right-one{
+        width: 68px;
+        height: 0.5px;
+      background-color: #FF0000; 
+        transform: rotate(140deg); 
+        position: absolute;
+        left: -24px;
+        top: 186.3px;
+
+    }
+
+    
+}

@@ -1,0 +1,113 @@
+@import "../Common/Mixin.scss";
+
+.inquiry {
+  
+  .form-inputs {
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 10px 0px;
+
+    @include max1024 {
+      gap: 10px;
+    }
+
+    .form-input {
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin-bottom: 15px;
+
+   
+      @include max650 {
+        width: 100%;
+      }
+      
+
+      label {
+        font-size: 14px;
+        color: #333;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+      }
+
+      .error {
+        position: absolute;
+        bottom: -20px;
+        color: red;
+        font-size: 12px;
+      }
+
+      input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 12px;
+        transition: all 0.3s ease;
+        
+
+        &::placeholder {
+          opacity: 0.5;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+
+        &:focus {
+          border-color: #f04;
+          box-shadow: 0 0 5px rgba(240, 4, 4, 0.5);
+          outline: none;
+        }
+      }
+
+      select {
+        padding: 10px 52px 10px 3px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        font-size: 12px;
+        border: 1px solid #ccc;
+        opacity: 0.5;
+        background-color: white;
+
+        &::placeholder {
+          opacity: 0.5;
+          color: gray;
+        }
+
+        &:focus {
+          border-color: #f04;
+          box-shadow: 0 0 5px rgba(240, 4, 4, 0.5);
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .send-btn {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    button {
+      padding: 10px 15px;
+      margin-top: 5px;
+      background-color: #ff0000;
+      color: white;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      border: 1px solid #ff0000;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: transparent;
+        border: 1px solid #ff0000;
+        color: black;
+      }
+    }
+  }
+}

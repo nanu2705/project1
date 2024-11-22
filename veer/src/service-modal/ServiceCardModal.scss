@@ -1,0 +1,121 @@
+@import "../Common/Mixin.scss";
+
+.s-modal-overlay {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgb(0 0 0 / 69%);
+}
+
+.s-modal {
+  box-sizing: border-box;
+  min-width: 250px;
+  max-width: 1200px;
+  position: fixed;
+  z-index: 21;
+  left: 50%;
+  width: fit-content;
+  padding: 10px 8px;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  background-color: white;
+  border-radius: 8px;
+  height: auto;
+  box-shadow: 0px 4px 4px rgba(208, 193, 193, 0.482);
+
+  @include max650 {
+    min-width: 275px;
+  }
+
+  .cancel-icon {
+    display: flex;
+    justify-content: end;
+    padding-bottom: 14px;
+    padding: 8px 0;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    cursor: pointer;
+    transition: all 0.7s;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
+
+  .country-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-around;
+    gap: 20px;
+    padding-bottom: 30px;
+    padding: 29px 0;
+
+    @include max1024 {
+      grid-template-columns: auto auto auto;
+    }
+    @include max767 {
+      grid-template-columns: auto auto;
+    }
+
+    .country-card {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      padding: 0 20px;
+      gap: 10px;
+      opacity: 1;
+
+      @include max650 {
+        padding-left: 0;
+        gap: 0px;
+      }
+
+      img {
+        height: 32px;
+        opacity: 0.9;
+
+        @include max650 {
+          height: 35px;
+        }
+        @include max450 {
+          height: 40px;
+        }
+      }
+      span {
+        font-weight: 700;
+        font-size: 10px;
+        text-align: center;
+        letter-spacing: 1.1px;
+      }
+    }
+  }
+}
+
+.s-modal-overlay-none {
+  display: none;
+}
+
+@keyframes s-modalin {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes s-modalout {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}

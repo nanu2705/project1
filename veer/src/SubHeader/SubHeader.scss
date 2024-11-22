@@ -1,0 +1,32 @@
+@import "../Common/Mixin.scss";
+
+.sub-header-content {
+  width: 100%;
+  background-color: black;
+  color: white;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 16px;
+
+  @include max1024 {
+    display: none;
+  }
+
+  .icon {
+    color: gray;
+  }
+  .line {
+    color: gray;
+    padding: 0px 6px;
+  }
+
+  .left,
+  .right {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+  }
+}

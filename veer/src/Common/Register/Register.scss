@@ -1,0 +1,101 @@
+
+
+
+.register-main{
+
+    max-width: 400px;
+    max-height: 500px;
+   
+    span{
+      :nth-child(1){
+         cursor: pointer;
+          position: absolute;
+          right: 10px;
+          top: 8px;
+      }
+  
+    }
+      
+     h4{
+       text-align: center;
+       border-bottom: 1px solid rgba(128, 128, 128, 0.315);
+       font-size: 20px;
+       color: rgba(0, 0, 0, 0.444);
+      
+     }
+      .register-form{
+          max-width: 1200px;
+          margin: 0 auto;
+          max-height: 400px;
+          height: fit-content;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          padding:  20px;
+         
+
+          .form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+           
+          }
+         
+          label{
+
+               text-align: left;
+              
+          }
+        
+          
+        .field{
+          width:fit-content;
+          padding: 8px 10px;
+          
+         
+
+      }
+          .error{
+            color: rgba(255, 0, 0, 0.955);
+            
+          }
+          button{
+  
+              width: 100px;
+              padding: 10px 20px;
+              border-radius: 10px;
+              border: 1px solid rgba(128, 128, 128, 0.356);
+              cursor: pointer;
+          }
+  
+          .register-page{
+  
+              span{
+                  cursor: pointer;
+                  background:none;
+  
+                  &::after {
+                      content: '';
+                      width: 0%;
+                      height: 2px;
+                      margin: 2px 81%;
+                      background: rgba(128, 128, 128, 0.336);
+                      display: block;
+                      transition: 0.5s;
+                    }
+                    &:hover::after{
+                      width: 20%;
+                    }
+              }
+          }
+      }
+
+      img{
+        position: absolute;
+        left: 25%;
+        height: 200px;
+      }
+  }
