@@ -9,7 +9,7 @@ const MyContextProvider = ({ children }) => {
   const location = useLocation()
 
   //for backend calling api start
-const url = 'http://localhost:3035'
+const url = 'https://back-zhzt.vercel.app'
 
   // for login drawer open start
   const [isOpen, setIsOpen] = useState(false)
