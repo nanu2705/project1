@@ -19,6 +19,7 @@ import Faq from '../Common/FAQ/Faq'
 import Countryreview from '../Common/Review/Countryreview'
 import { Helmet } from 'react-helmet-async';
 import { RxCross2 } from "react-icons/rx";
+import { CiCircleQuestion } from "react-icons/ci";
 
 
 
@@ -186,15 +187,29 @@ const CountryPage = () => {
                 <h4>Total Amount</h4>
                 <h4>{totalprice}
             </h4>
-            
               </div>
-              <div  className={`start-app ${isFixed ? 'fixed' : ''}`}  onClick={() =>{
+               {
+                 ["visitor-visa", "student-visa", "work-visa"].includes(pageData?.name) ?
+                  (
+                  <div  className={`start-app ${isFixed ? 'fixed' : ''}`}  onClick={() =>{
                
-                Navigate('/layout')}}>
-                <button onClick={()=>setSaveform({...saveform,quantity:quntity}) || setSname(servicename) || setCname(countryname)}>Start Application</button>
+               Navigate('/layout')}}>
+               <button onClick={()=>setSaveform({...saveform,quantity:quntity}) || setSname(servicename) || setCname(countryname)}>Start Application</button>
+             </div>
+            ):
+             (
+               
+                 <div  className={`start-app ${isFixed ? 'fixed' : ''}`}  onClick={() =>{
+               
+               Navigate('/layoutpassport')}}>
+               <button onClick={()=>setSaveform({...saveform,quantity:quntity}) || setSname(servicename) || setCname(countryname)}>Start Application</button>
+             </div>
+               
 
-            
-              </div>
+             )
+               }
+              
+
             </div>
                 </>
               )
@@ -245,12 +260,13 @@ const CountryPage = () => {
                     return(
                      <div key={doc.id}>
                       <h3  onMouseEnter={() => setIdproof(doc.id)} 
-                          onMouseLeave={() => setIdproof(null)}>
+                          onMouseLeave={() => setIdproof(null)}
+                          >
                             
-                            {doc.name}</h3>
-                      
+                           
+                            {doc.name}   <CiCircleQuestion /> </h3>
                       {idproof === doc.id &&
-                      <div>
+                      <div className='list'>
                         {doc.container
                          .filter((containerItem) => containerItem.id === doc.id)
                         .map((containerItem) => {

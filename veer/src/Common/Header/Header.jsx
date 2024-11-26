@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import Droplist from '../Droplist/Droplist';
 
 const Header = () => {
-  const { Navigate, location, searchTerm, setSearchTerm,setLogopen} = useContext(MyContext)
+  const { Navigate, location, searchTerm, setSearchTerm,setLogopen,logopen} = useContext(MyContext)
   const items = useMemo(() => ['passport', 'student visa', 'visitor visa', 'work permit', 'ielts', 'pte', 'aadhar card', 'pan card', 'election card', 'driving license'], []);
   const [right, setRight] = useState(items[0]);
   const [index, setIndex] = useState(0);
@@ -32,8 +32,10 @@ const Header = () => {
   }, [index, items]);
 
 
-  if(location.pathname ==='/admin'){
-    return null;
+  const loc=['/layout','/adminveer']
+
+  if (loc.includes(location.pathname)) {
+      return null
   }
 
   
@@ -65,10 +67,23 @@ const Header = () => {
 
           <div className='right'>
         
-              <div className="passport-apply">
-              <button className='btn1' onClick={()=>setLogopen(true)}>Apply For Passport</button>
-             <Droplist/>
+              <div className="passport-apply"
+              onMouseEnter={() => setLogopen(true)} 
+              onMouseLeave={() => setLogopen(false)} >
+              <button
+                className="btn1"
+              >
+              Apply For Passport</button>
+            {logopen && <Droplist/> } 
               </div>
+
+               {/* {for passport button in mobile view */
+        
+        <div className="passport-applys">
+        <button className='btn1s' onClick={()=>setLogopen(true)}>Apply For Passport</button>
+       <Droplist/>
+        </div>
+        }
              
                <button className='explore' onClick={() => Navigate('/explore')}>Explore</button>
            
@@ -94,6 +109,7 @@ const Header = () => {
         </div>
         }
 
+       
 
       </header>
 

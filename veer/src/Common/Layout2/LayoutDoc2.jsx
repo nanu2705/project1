@@ -32,7 +32,7 @@ const LayoutDoc2 = ({servicename, countryname}) => {
 
     const {cb,start,changephoto,changepassport,changedetails,selectedDate, setSelectedDate,uploadedPhoto,
       uploadedPassport,uploadedbackPassport,onPassportUpload,onPassportbackUpload,onPhotoUpload,
-      totalprice,handlepay,handleupi
+      totalprice,handlepay
     } = useContext(MyContext)
 
     useEffect(() => {
@@ -66,7 +66,7 @@ const LayoutDoc2 = ({servicename, countryname}) => {
 
 handlepay(values.email,values.mobileNo)
 
-     handleupi()
+    //  handleupi()
 
       resetForm()
     }

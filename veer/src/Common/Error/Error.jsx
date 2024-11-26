@@ -19,7 +19,8 @@ const Error = () => {
         <>
             {sneck &&
                 <div className='animate__animated animate__fadeInRight alert' style={{ color: msg.match('Thanks') ? 'green' : 'red' }}>{!msg.match('Thanks') 
-                    ? <MdErrorOutline className='e-icon' /> : <IoMdCheckmarkCircleOutline className='s-icon' />} {msg}</div>
+                ? <MdErrorOutline className='e-icon' /> :
+                <IoMdCheckmarkCircleOutline className='s-icon' />} {msg}</div>
                 
 
             }

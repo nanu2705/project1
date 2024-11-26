@@ -111,11 +111,30 @@
   }
 }
 
+@keyframes s-modalins {
+  0% {
+    transform:  translate(-50%, -50%) translateY(100%);
+  }
+  100% {
+    transform:  translate(-50%, -50%) translateY(0%);
+  }
+}
+
+
 @keyframes s-modalout {
   0% {
     transform: translate(-50%, -50%) scale(1);
   }
   100% {
     transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+@keyframes s-modalouts {
+  0% {
+    transform: translate(-50%, -50%) translateY(50%);
+  }
+  100% {
+    transform:  translate(-50%, -50%)translateY(200%);
   }
 }

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import logo from '../../Assets/images/loderlogo.png'
 import './Loader.scss'
 import MyContext from '../Context/MyContext'
+
 
 const Loader = () => {
     const{loading} = useContext(MyContext)
@@ -13,10 +13,10 @@ const Loader = () => {
 
         <div className='loader'>
 
-
-        
-        <img src={logo} alt=''/>
-
+          <div className="logo">
+          
+          </div>
+       
         <div className='line'/>
         </div>
    

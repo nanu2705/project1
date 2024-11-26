@@ -11,16 +11,7 @@
     align-items: center;
     z-index: 999;
 
-    img{
-        width: 20%;
-        height: auto;
-        animation: logo 1.5s infinite ease-in;
-
-        @include m720{
-            width: 24%;
-        }
-     
-    }
+  
 
     .line{
         position: fixed;
@@ -33,6 +24,15 @@
 
      
     }
+
+    .logo{
+        width: 50px;
+        height: 50px;
+      
+        border-top: 3px solid #f80404; 
+        border-radius: 50%;
+        animation: spin 1s linear infinite; 
+    }
 }
 
 @keyframes line {
@@ -42,9 +42,11 @@
 
 }
 
-@keyframes logo {
-    0%{transform: scale(0.4);}
-    50%{transform: scale(0.5);}
-    100%{transform: scale(0.7);}
-
-}
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

@@ -6,13 +6,13 @@ import img1 from '../../Assets/images/tatkalP.png'
 import { IoIosArrowForward } from "react-icons/io";
 
 const Droplist = () => {
-  const { logopen,setLogopen,Navigate } = useContext(MyContext)
+  const { logopen,setLogopen } = useContext(MyContext)
   return (
     <div>
       {logopen && (
         <div className="logout-overlay" onClick={() => setLogopen(false)}>
           <div className="drop-list">
-            <div className='dropP' onClick={()=>Navigate(`/passport/normal-passport`)}>
+            <div className='dropP' onClick={()=> window.location.href = "/passport/normal-passport"}>
               
               <div className="dropI">
               <img src={img} alt="" />
@@ -29,7 +29,7 @@ const Droplist = () => {
                </div>
               </div>
            
-            <div className='dropP' onClick={()=>Navigate(`/passport/tatkal-passport`)}>
+            <div className='dropP' onClick={()=>window.location.href = "/passport/tatkal-passport"}>
               
             <div className="dropI">
               <img src={img1} alt="" />

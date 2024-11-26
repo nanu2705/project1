@@ -20,8 +20,10 @@ const CardsContainer = () => {
         pages.push(i)
     }
     return (
-
+             
+        
         <>
+        
         <div className="cards-container anim-card">
             {currentPosts.map((obj, index) => {
                 return <Card obj={obj} key={index} />;
@@ -51,7 +53,7 @@ const CardsContainer = () => {
     onClick={()=>setCurrentPage(currentPage+1) || handlestep(inc)}> &gt;
     </button>
 
-</div>
+        </div>     
         </>
     )
 }

@@ -223,6 +223,57 @@ const Admin = () => {
                         </div>
                     )}
 
+
+                   {save === "passport" && (
+                        <div className="table-container">
+                            <h3>Serviceform Details</h3>
+                            <table>
+                                <tr>
+                                    <th>Index</th>
+                                    <th>Date&Time</th>
+                                    <th>Date</th>
+                                    <th>Service Name</th>
+                                    <th>Country Name</th>
+                                    <th>Photo Proof</th>
+                                    <th>DOB Proof</th>
+                                    {/* <th>Photo</th>
+                                    <th>Passport-front</th>
+                                    <th>Passport-back</th> */}
+                                    <th>Quantity</th>
+                                    
+                                </tr>
+
+                                {detailsData?.map((item, index) => {
+                                    return (
+                                        <tr key={index}>
+                                            <td>{index + 1}</td>
+                                            <td>{new Date(item.createdAt).toLocaleString()}</td>
+                                            <td>{new Date(item.date).toLocaleDateString('en-GB')}</td>
+                                            <td>{item.sname}</td>
+                                            <td>{item.cname}</td>
+                                            <td>{item.email}</td>
+                                            <td>{item.mobileNo}</td>
+                                              <td>{item.quantity}</td>
+
+                                            {/* <td><a target="_blank" rel="noreferrer" download="identity.jpg" href={url + '/' + item.identityProof}>Photo</a></td>
+                                            <td><a target="_blank" rel="noreferrer" href={url + '/' + item.birthProof}>Passport-front</a></td>
+                                            <td><a target="_blank" rel="noreferrer" href={url + '/' + item.addressProof}>Passport-back</a></td> */}
+                                            <td>
+                                                <div className="actions-btn">
+                                                    <div className="delete-btn">
+                                                        <RiDeleteBin5Line
+                                                            size={"25px"}
+                                                            onClick={() => deleteDetailsById(item._id)}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    );
+                                })}
+                            </table>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

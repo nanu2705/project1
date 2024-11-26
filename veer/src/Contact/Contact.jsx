@@ -6,6 +6,7 @@ import axios from 'axios'
 import MyContext from '../Common/Context/MyContext';
 import { Helmet } from 'react-helmet-async';
 
+
 const Contact = () => {
   const { setMsg, setLoading, setSneck ,url} = useContext(MyContext)
 
@@ -65,7 +66,8 @@ const Contact = () => {
         <meta name="description" content="Contact page" />
       </Helmet>
       <h3>Let's Talk</h3>
-
+    
+  
       <div className='con'>
         <div className="anim">
           <svg className="pentagon-border outer-pentagon" viewBox="0 0 100 100">

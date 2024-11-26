@@ -9,7 +9,7 @@ const MyContextProvider = ({ children }) => {
   const location = useLocation()
 
   //for backend calling api start
-  const url = "https://back-final-six.vercel.app"
+const url = 'http://localhost:3035'
 
   // for login drawer open start
   const [isOpen, setIsOpen] = useState(false)
@@ -48,8 +48,25 @@ const MyContextProvider = ({ children }) => {
   const [pageData, setPageData] = useState(null);
   const [countryName, setCountryName] = useState(null);
 
-  const [idproof,setIdproof] =useState(null)
+  const [idproof,setIdproof] =useState(false)
   // for dynamic coutrypage data end
+
+  //for layoutpassport start
+
+  const[preview,setPreview] =useState(false)
+  
+  const previewO=()=>{
+    setPreview(true)
+    document.querySelector('body').style.overflow='hidden'
+    
+  }
+
+  const previewC=()=>{
+    setPreview(false)
+    document.querySelector('body').style.overflow='auto'
+  }
+    
+  //for layoutpassport end
 
 
   const [bgColor, setBgColor] = useState('step1');
@@ -60,8 +77,14 @@ const MyContextProvider = ({ children }) => {
     setIsOpenModal(true);
 
     const modalElement = document.getElementById('smodal')
+    const screenWidth = window.innerWidth;
     if (modalElement) {
-      modalElement.style.animation = "s-modalin 0.5s ease";
+      if (screenWidth <= 525) {
+        modalElement.style.animation = "s-modalins 0.5s ease";
+      } else {
+        modalElement.style.animation = "s-modalin 0.5s ease"; 
+      } 
+     
 
       setCardName(name);
       document.querySelector('body').style.overflow = "hidden";
@@ -71,9 +94,13 @@ const MyContextProvider = ({ children }) => {
   const closeModal = () => {
 
     const modalElement = document.getElementById('smodal');
+    const screenWidth = window.innerWidth;
     if (modalElement) {
-      modalElement.style.animation = "s-modalout 0.4s ease";
-      // Wait for the animation to finish before updating the state and overflow
+      if (screenWidth <= 525) {
+        modalElement.style.animation = "s-modalouts 0.4s ease"; 
+      } else {
+        modalElement.style.animation = "s-modalout 0.4s ease"; 
+      } 
       setTimeout(() => {
         document.querySelector('body').style.overflow = "unset";
         setIsOpenModal(false);
@@ -98,9 +125,21 @@ const MyContextProvider = ({ children }) => {
 
   //for api calling start
   useEffect(() => {
-    axios.get(`${url}/api/service-details`)
-      .then((a) => setApi(a.data))
-  }, [])
+    const fetchData = async () => {
+      try {
+      setLoading(true)
+        const response = await axios.get(`${url}/api/service-details`);
+        setApi(response.data);
+      } catch (err) {
+        console.error("Error fetching data:", err);
+        setError(err.message);
+      }finally {
+        setLoading(false); 
+      }
+    };
+
+    fetchData();
+  }, [url]);
   // for api calling end
 
 
@@ -114,10 +153,21 @@ const MyContextProvider = ({ children }) => {
   //for rapi calling start
 
   useEffect(() => {
-    axios.get(`${url}/api/reviews`)
-      .then((b) => SetRapi(b.data))
-  }, [])
+    const fetchReviews = async () => {
+      try {
+        setLoading(true)
+        const response = await axios.get(`${url}/api/reviews`);
+        SetRapi(response.data);
+      } catch (err) {
+        console.error("Error fetching reviews:", err);
+        setError(err.message);
+      } finally {
+        setLoading(false); 
+      }
+    };
 
+    fetchReviews();
+  }, [url]);
   //for rapi calling end
 
 
@@ -131,9 +181,21 @@ const MyContextProvider = ({ children }) => {
  //for fapi calling start
 
  useEffect(() => {
-  axios.get(`${url}/api/faq`)
-    .then((f) => setFapi(f.data))
-}, [])
+  const fetchFAQs = async () => {
+    try {
+      setLoading(true)
+      const response = await axios.get(`${url}/api/faq`);
+      setFapi(response.data);
+    } catch (err) {
+      console.error("Error fetching FAQs:", err);
+      setError(err.message);
+    } finally {
+      setLoading(false); 
+    }
+  };
+
+  fetchFAQs();
+}, [url]);
 
 //for fapi calling end
 
@@ -567,8 +629,8 @@ const onPhotoUpload = (event) => {
 
   return (
     <MyContext.Provider value={{
-      title,setTitle,opensearch,setOpensearch,username, setUsername,error, setError,idproof,setIdproof,
-      passmodel,setPassmodel,sockets,setSockets,messages, setMessages,message, setMessage,
+      title,setTitle,opensearch,setOpensearch,username, setUsername,error, setError,idproof,setIdproof,preview,setPreview,
+      passmodel,setPassmodel,sockets,setSockets,messages, setMessages,message, setMessage,previewO,previewC,
       photofile,setPhotofile,file,setFile,sname,setSname,cname,setCname,handleO,handleC,socketO,socketC,
       onPassportUpload ,onPassportbackUpload,onPhotoUpload,quntity, setQuntity,saveform,setSaveform,
       selectedDate, setSelectedDate,uploadedPhoto, setUploadedPhoto,uploadedPassport,setUploadedPassport,uploadedbackPassport,setUploadedbackPassport,

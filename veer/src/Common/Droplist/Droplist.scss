@@ -4,7 +4,6 @@
 overflow: hidden;
 width: 100%;
 position:fixed;
-
 top: 0px;
 right: 0;
 height: 100vh;
@@ -31,10 +30,45 @@ z-index: 1000;
     border: 1px solid  rgba(0, 0, 0, 0.073);
     border-radius: 0px  0 18px 18px ;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
- 
+  height: fit-content;
   
   
 
+    @include m945{
+      position: fixed;
+      top: 0px;
+    }
+
+    @include max800{
+      animation: slide-up 0.5s ease-in-out; 
+      position: fixed;
+      top: 50%;
+      transform: translateY(50%); 
+    }
+
+    @include max767{
+      
+    }
+    @include max650{
+     
+      width: 300px;
+      
+    }
+
+    @include max450{
+   
+   width:80%;
+    }
+
+    @include max370{
+     
+      width: 80%;
+    }
+    @include m1000{
+        position:absolute;
+        top: 6%;
+        right: 9%;
+    }
    .dropP{
   
     display: flex;
@@ -83,54 +117,6 @@ z-index: 1000;
    
    }
  
-    @include max767{
-      position: fixed;
-      top: 60px;
-    
-    }
-
-    @include max800{
-      animation: slide-up 0.5s ease-in-out;
-    }
-
-    @include m945{
-      position: fixed;
-      top: 0px;
-
-     
-    }
-
-    @include max650{
-      position: fixed;
-      top: 20%;
-      width: 300px;
-      
-    }
-
-    @include max450{
-   position: fixed;
-   left: 30px;
-   width: 280px;
-    }
-
-    @include max370{
-      position: fixed;
-      left: 50px;
-      width: 210px;
-    }
-    @include m1000{
-        position:absolute;
-        top: 6%;
-        right: 9%;
-    }
-    li{
-    
-     
-        list-style: none;
-        cursor: pointer;
-        background:none;
-
-    }
   }
 }
 
@@ -140,7 +126,8 @@ z-index: 1000;
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    transform: translateY(50%);
     opacity: 1;
   }
 }
+

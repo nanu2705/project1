@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import './Footer.scss'
-// import { MdOutlineMessage } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
 import MyContext from '../Common/Context/MyContext';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -13,7 +12,7 @@ const Footer = () => {
     const { setMsg, setLoading, setSneck, Navigate, api, location ,url} = useContext(MyContext)
 
 
-    // console.log(api.filter((i, index) => index === 0))
+  
 
     const handleNavigation = (name, sname) => {
         window.open(`/service/${sname}/${name}`);
@@ -37,7 +36,6 @@ const Footer = () => {
             if (data.success) {
                 setMsg(data.message)
                 setSneck(true)
-                // alert(data.message)
                 resetForm()
             } else {
                 setSneck(true)
@@ -58,12 +56,12 @@ const Footer = () => {
 
     }
 
-    if (location.pathname === '/layout') {
+    const loc=['/layout','/adminveer']
+
+    if (loc.includes(location.pathname)) {
         return null
     }
-    if (location.pathname === '/admin') {
-        return null
-    }
+   
     
     return (
         <>
@@ -87,10 +85,7 @@ const Footer = () => {
                             
                             </div>
                         </div>
-                        <div className="f-item">
-                        <span onClick={()=>Navigate('/adminform')}>Admin Panel</span>
-
-                        </div>
+                      
                     </div>
                     <div className='f-content'>
                         <div className='fheading'>Study Abroad</div>
