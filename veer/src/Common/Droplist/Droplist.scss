@@ -10,11 +10,7 @@ height: 100vh;
 background-color: rgba(0, 0, 0, 0.019);
 z-index: 1000;
 
-@include max800{
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
+
 
     
   .drop-list{
@@ -30,7 +26,7 @@ z-index: 1000;
     border: 1px solid  rgba(0, 0, 0, 0.073);
     border-radius: 0px  0 18px 18px ;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  height: fit-content;
+    height: fit-content;
   
   
 
@@ -42,44 +38,75 @@ z-index: 1000;
     @include max800{
       animation: slide-up 0.5s ease-in-out; 
       position: fixed;
-      top: 50%;
-      transform: translateY(50%); 
+      top: 10%;
+      transform: translateY(10%); 
     }
 
-    @include max767{
-      
-    }
     @include max650{
-     
-      width: 300px;
-      
+      width: 300px;  
     }
 
-    @include max450{
-   
-   width:80%;
-    }
+   @include max525{
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    border-radius:0;
+    height: fit-content;
+    padding: 0 5px 20px 5px;
+    z-index: 9999;
+    animation: slide-ups 0.5s ease-in-out; 
+    transform: translateY(100%); 
+   }
 
-    @include max370{
-     
-      width: 80%;
-    }
+  
+
+
     @include m1000{
         position:absolute;
         top: 6%;
         right: 9%;
+    }
+
+   .cross{
+  
+   display: none;
+   
+
+      @include max525{
+        display: block;
+        // background-color: aqua;
+        position: relative;
+        top: 10px;
+        right: 30px;
+        align-self: end;
+        font-size: 20px;
+        cursor: pointer;
+      }
     }
    .dropP{
   
     display: flex;
     justify-content: center;
     align-items: center ;
-    
+    width: fit-content;
     gap: 10px;
     cursor: pointer;
+   
 
     @include max800{
       transition: background-color 0.2s;
+    }
+
+    @include max525{
+      width: 100%;
+   
+    }
+
+    @include m380{
+    
+      width: 95%;
+      height: 100%;
+      transform: translateY(0%);
     }
     
     .dropI{
@@ -126,8 +153,20 @@ z-index: 1000;
     opacity: 0;
   }
   to {
-    transform: translateY(50%);
+    transform: translateY(10%);
     opacity: 1;
   }
 }
+
+@keyframes slide-ups {
+  from{
+    transform: translateY(500%);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(110%);
+    opacity: 1;
+  }
+}
+
 

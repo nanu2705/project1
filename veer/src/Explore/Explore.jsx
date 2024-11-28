@@ -13,7 +13,8 @@ const Explore = () => {
 
 <Helmet>
         <title>Explore</title>
-        <meta name="description" content="Explore page" />
+        <meta name="The Explore Page is your gateway to discovering trending services, personalized recommendations, and curated categories. Easily search, browse, and uncover new opportunities with seamless navigation designed to inspire, inform, and connect you to what matters most."
+         content="Explore page" />
       </Helmet>
             <div className='e-first'>
                 <div className='explore1'>

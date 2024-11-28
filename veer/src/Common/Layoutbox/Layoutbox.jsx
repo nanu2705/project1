@@ -1,178 +1,123 @@
-import React, { useContext } from "react";
-import "./Layoutbox.scss";
-import * as Yup from "yup";
-import { Helmet } from "react-helmet-async";
-import { Formik, Form, ErrorMessage } from "formik";
-import MyContext from "../Context/MyContext";
-import { MdCancel } from "react-icons/md";
-import axios from "axios";
+import React, { useContext } from 'react';
+import { Formik, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import axios from 'axios';
+import './Layoutbox.scss';
+import MyContext from '../Context/MyContext';
 
+const Layoutbox = () => {
+  const { url, setLoading, setSneck, setMsg,Navigate} = useContext(MyContext);
 
-const Layoutbox = ({ servicename, countryname }) => {
-
-  const {setPreview,preview, previewO,previewC,cname,url} =useContext(MyContext  )
-  const validationSchema = Yup.object({
-    photoproof: Yup.mixed().required("Photo ID is required"),
-    dobproof: Yup.mixed().required("DOB Proof is required"),
-    addressproof: Yup.mixed().required("Address Proof is required"),
-    nonecr: Yup.mixed().required("NON-ECR Proof is required"),
-  });
+ 
 
   const initialValues = {
-    photoproof: null,
-    dobproof: null,
-    addressproof: null,
-    nonecr: null,
+    file: null,
+    file1: null,
+    file2: null,
+    file3: null,
   };
 
-  const handleSubmit = async (values) => {
-  
-  
+  const validationSchema = Yup.object().shape({
+    file: Yup.mixed().required('Photo Id is required'),
+    file1: Yup.mixed().required('DOB Proof is required'),
+    file2: Yup.mixed().required('Address Proof is required'),
+    file3: Yup.mixed().required('NON-ECR Proof is required'),
+  });
+
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     const formData = new FormData();
-    formData.append('photoproof', values.photoproof);
-    formData.append('dobproof', values.dobproof);
-    formData.append('addressproof', values.addressproof);
-    formData.append('nonecr', values.nonecr);
-         
-    alert(JSON.stringify(formData, null, 2)); 
-      // Log FormData content
-      console.log('FormData contents:');
-      for (let [key, value] of formData.entries()) {
-          console.log(`${key}:`, value);
-      }
-  
-    setPreview({ show:true, data: {
-      photoproof: values.photoproof.name,
-      dobproof: values.dobproof.name,
-      addressproof: values.addressproof.name,
-      nonecr: values.nonecr.name,
-  },
-});
+    formData.append('file', values.file);
+    formData.append('file1', values.file1);
+    formData.append('file2', values.file2);
+    formData.append('file3', values.file3);
 
-    
-       
     try {
-      const { data } = await axios.post(`${url}/passport`,formData, {
+      setLoading(true);
+      const { data } = await axios.post(`${url}/passport`, formData, {
         headers: {
-          'Content-Type': 'multipart/form-data', 
+          'Content-Type': 'multipart/form-data',
         },
-    });
-    console.log(data);
-      alert('File uploaded successfully');
-    
-      } catch (error) {
-      console.error('Error uploading file:', error);
-      }
+      });
 
+      if (data.success) {
+        setMsg(data.message);
+        setSneck(true);
+        resetForm();
+      } else {
+        setMsg(data.error);
+        setSneck(true);
+      }
      
+    } catch (error) {
+      console.error('Error uploading files:', error);
+      alert('Error uploading files');
+    }finally {
+      setLoading(false);
+      Navigate('/')
+      setSubmitting(false);
+    }
+   
   };
 
   return (
     <div className="LayoutP-main">
-      <Helmet>
-        <title>{{servicename}/{countryname}}</title>
-        <meta name="description" content="Layout page" />
-      </Helmet>
-
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({ setFieldValue }) => (
+        {({ setFieldValue, isSubmitting }) => (
           <Form className="form-passport">
-         
-            <h3>Upload Documents</h3>
             <div className="form-box">
-              <label htmlFor="photoproof">Photo Proof:</label>
+              <label>Photo Proof:</label>
               <input
                 type="file"
-                id="photoproof"
-                name="photoproof"
-                onChange={(event) =>
-                  setFieldValue("photoproof", event.target.files[0])
-                }
+                name="file"
+                accept="images/"
+                onChange={(event) => setFieldValue('file', event.currentTarget.files[0])}
               />
-              <ErrorMessage
-                name="photoproof"
-                component="div"
-                className="error"
-              />
+              <ErrorMessage className="error" name="file" component="div" />
             </div>
 
             <div className="form-box">
-              <label htmlFor="dobproof">DOB Proof:</label>
+              <label>DOB Proof:</label>
               <input
                 type="file"
-                id="dobproof"
-                name="dobproof"
-                onChange={(event) =>
-                  setFieldValue("dobproof", event.target.files[0])
-                }
+                name="file1"
+                accept="images/"
+                onChange={(event) => setFieldValue('file1', event.currentTarget.files[0])}
               />
-              <ErrorMessage name="dobproof" component="div" className="error" />
+              <ErrorMessage className="error" name="file1" component="div" />
             </div>
 
             <div className="form-box">
-              <label htmlFor="addressproof">Address Proof:</label>
+              <label>Address Proof:</label>
               <input
                 type="file"
-                id="addressproof"
-                name="addressproof"
-                onChange={(event) =>
-                  setFieldValue("addressproof", event.target.files[0])
-                }
+                name="file2"
+                accept="images/"
+                onChange={(event) => setFieldValue('file2', event.currentTarget.files[0])}
               />
-              <ErrorMessage
-                name="addressproof"
-                component="div"
-                className="error"
-              />
+              <ErrorMessage className="error" name="file2" component="div" />
             </div>
 
             <div className="form-box">
-              <label htmlFor="nonecr">NON-ECR Proof:</label>
+              <label>NON-ECR Proof:</label>
               <input
                 type="file"
-                id="nonecr"
-                name="nonecr"
-                onChange={(event) =>
-                  setFieldValue("nonecr", event.target.files[0])
-                }
+                name="file3"
+                accept="images/"
+                onChange={(event) => setFieldValue('file3', event.currentTarget.files[0])}
               />
-              <ErrorMessage name="nonecr" component="div" className="error" />
+              <ErrorMessage className="error" name="file3" component="div" />
             </div>
 
-            <button onClick={previewO}>Submit</button>
-
-            {preview?.show && (
-        <div className="preview-container">
-         <p onClick={previewC}><MdCancel /></p>  <h3>Preview Details</h3> 
-         <span className="pre">
-              <span>Passport Type</span> <p>{cname}</p>
-            </span>
-            <span className="pre">
-              <span>Photo Proof:</span> <p>{preview.data.photoproof}</p>
-            </span>
-            <span  className="pre">
-              <span>DOB Proof:</span> <p>{preview.data.dobproof}</p>
-            </span>
-            <span  className="pre">
-              <span>Address Proof:</span> <p>{preview.data.addressproof}</p>
-            </span>
-            <span  className="pre">
-              <span>NON-ECR Proof:</span> <p>{preview.data.nonecr}</p>
-            </span>
-        
-
-         
-        </div>
-      )}
+            <button type="submit" disabled={isSubmitting} >
+              Submit
+            </button>
           </Form>
         )}
       </Formik>
-
-     
     </div>
   );
 };

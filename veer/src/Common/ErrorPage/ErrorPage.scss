@@ -105,7 +105,7 @@
 
       p{
         position: absolute;
-        right: 30px;
+        right: 35px;
         top: 3px;
         font-size: 13px;
     cursor: pointer;
@@ -116,12 +116,14 @@
 
     .search-list{
       border: 1px solid #D9D9D9;
-      width: 467px;
+      width: 470px;
       position: absolute;
-     top: 67%;
+     top:100%;
      height: 250px;
      overflow: hidden;
-     border-top: none;
+     border-radius: 20px ;
+     z-index: 999;
+     background-color: white;
      
      @include max525{
       height: 200px;

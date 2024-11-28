@@ -1,8 +1,8 @@
 import React, {  useContext, useEffect, useState } from 'react'
 import "./CountryPage.scss"
-import { FaUserGroup } from "react-icons/fa6";
-import { CiCirclePlus } from "react-icons/ci";
-import { CiCircleMinus } from "react-icons/ci";
+// import { FaUserGroup } from "react-icons/fa6";
+// import { CiCirclePlus } from "react-icons/ci";
+// import { CiCircleMinus } from "react-icons/ci";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import MyContext from '../Common/Context/MyContext'
@@ -25,7 +25,7 @@ import { CiCircleQuestion } from "react-icons/ci";
 
 const CountryPage = () => {
 
-    const { entryPrice,quntity,totalprice, setTotalprice,setQuntity, setEntryPrice,api, setPageData,setCountryName,pageData,
+    const { entryPrice,quntity,totalprice, setTotalprice, setEntryPrice,api, setPageData,setCountryName,pageData,
            countryName,Navigate,setSaveform,saveform,setCname,setSname,idproof,setIdproof} = useContext(MyContext);
 
     const{ servicename,countryname } = useParams();
@@ -46,16 +46,16 @@ const CountryPage = () => {
     pageData?.country
       .filter((item) => item.name === countryName)
       .map((item) => images = item.countryImages)
-    const handleMinus = () => {
-        if (quntity > 0) {
-          setQuntity(quntity - 1)
-        }
-      }
-      const handlePlus = () => {
-        if (quntity < 10) {
-          setQuntity(quntity + 1)
-        }
-      }
+    // const handleMinus = () => {
+    //     if (quntity > 0) {
+    //       setQuntity(quntity - 1)
+    //     }
+    //   }
+    //   const handlePlus = () => {
+    //     if (quntity < 10) {
+    //       setQuntity(quntity + 1)
+    //     }
+    //   }
 
       const Responsive = {
         superLargeDesktop: {
@@ -78,7 +78,7 @@ const CountryPage = () => {
       };
  
       useEffect(() => {
-        console.log(api.filter((item) => item.name === servicename)[0])
+        // console.log(api.filter((item) => item.name === servicename)[0])
         const filteredData = api.filter((item) => item.name === servicename)[0];
         setPageData(filteredData);
         setCountryName(countryname)
@@ -143,7 +143,7 @@ const CountryPage = () => {
                  
           <div className='pricing-container'>
 
-            <div className='first'>
+            {/* <div className='first'>
            { ["visitor-visa", "student-visa", "work-visa"].includes(pageData?.name) ?(
               <>
               <div className='title'>
@@ -166,7 +166,7 @@ const CountryPage = () => {
               <div>
 
               </div>
-            </div>
+            </div> */}
            {pageData?.country
             .filter((price)=>price.name === countryName)
             .map((price,index)=>{

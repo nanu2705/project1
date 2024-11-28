@@ -6,12 +6,13 @@ import img1 from '../../Assets/images/tatkalP.png'
 import { IoIosArrowForward } from "react-icons/io";
 
 const Droplist = () => {
-  const { logopen,setLogopen } = useContext(MyContext)
+  const { logopen,closedrop} = useContext(MyContext)
   return (
     <div>
       {logopen && (
-        <div className="logout-overlay" onClick={() => setLogopen(false)}>
-          <div className="drop-list">
+        <div className="logout-overlay">
+          <div className="drop-list" id='opendrop' onMouseLeave={closedrop}>
+            <span className='cross'id='closedrop' onClick={closedrop}>&times;</span>
             <div className='dropP' onClick={()=> window.location.href = "/passport/normal-passport"}>
               
               <div className="dropI">

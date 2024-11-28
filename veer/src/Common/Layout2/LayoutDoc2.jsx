@@ -147,13 +147,14 @@ handlepay(values.email,values.mobileNo)
         <StaticDatePicker
                 displayStaticWrapperAs="desktop"
                 showToolbar={false}  
-                value={selectedDate}
+                value={selectedDate || dayjs().add(8, 'day')}
                 onChange={(newDate) => setSelectedDate(newDate)}
                 shouldDisableDate={(date) => 
                   date.isBefore(dayjs(), 'day') ||       
                   date.isSame(dayjs(), 'day') ||         
                   date.isBefore(dayjs().add(8, 'day'), 'day')
                 }
+                defaultCalendarMonth={dayjs().add(8, 'day')}
             />
        </LocalizationProvider>
        <span className='dateselect'>{selectedDate ? dayjs(selectedDate).format('MMM D, YYYY') : "No date selected"}</span>
@@ -166,6 +167,7 @@ handlepay(values.email,values.mobileNo)
               <h4>Upload Photo</h4>
              
               <img src={uploadedPhoto || img1} alt="User" /> 
+             
 
              <span>
                 <p><TiTick />A well lit area</p>
@@ -198,7 +200,7 @@ handlepay(values.email,values.mobileNo)
         {cb === 'passport' &&
                <div className="passport">
                  <h4>Upload Passport</h4>
-
+                
                  <div className="passport-image">
 
                   <div className="front-side">
@@ -247,10 +249,6 @@ handlepay(values.email,values.mobileNo)
               style={{ display: 'none' }}
               id="passportbackUpload"
             />
-                   
-           
-
-             
              
              {uploadedbackPassport && uploadedPassport ?<label className='button' onClick={changedetails}>Next</label>:
              '' }
@@ -264,7 +262,6 @@ handlepay(values.email,values.mobileNo)
                   <div className="form-container">
                  <h4>Form Details</h4> 
                  
-              
                  <div className="details-date">
                <span> Departure date :  {selectedDate && dayjs(selectedDate).format('MMMM D, YYYY')}</span> 
                <span>Total Price:  ₹ {totalprice}</span>
@@ -282,6 +279,7 @@ handlepay(values.email,values.mobileNo)
                 <Field type="mobileNo" id="mobileNo" name="mobileNo" className="field" placeholder="Enter Mobile Number" />
                 <ErrorMessage name="mobileNo" component="div" className="error" />
               </div>
+              
 
               <div className="form-fields">
                 <label htmlFor="email">Email:</label>

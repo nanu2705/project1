@@ -9,7 +9,7 @@ const MyContextProvider = ({ children }) => {
   const location = useLocation()
 
   //for backend calling api start
-const url = 'https://back-zhzt.vercel.app'
+const url ='http://localhost:3035' 
 
   // for login drawer open start
   const [isOpen, setIsOpen] = useState(false)
@@ -88,6 +88,44 @@ const url = 'https://back-zhzt.vercel.app'
 
       setCardName(name);
       document.querySelector('body').style.overflow = "hidden";
+    }
+  };
+
+  const opendrop = () => {
+
+    setLogopen(true);
+
+    const modalElement = document.getElementById('sdrop')
+    const screenWidth = window.innerWidth;
+    if (modalElement) {
+      if (screenWidth <= 525) {
+        modalElement.style.animation = "slide-ups 0.5s ease";
+      } else {
+        modalElement.style.animation = "slide-up 0.5s ease"; 
+      } 
+     
+
+      
+      document.querySelector('body').style.overflow = "hidden";
+    }
+  };
+
+  const closedrop = () => {
+
+    setLogopen(false);
+
+    const modalElement = document.getElementById('sdrop')
+    const screenWidth = window.innerWidth;
+    if (modalElement) {
+      if (screenWidth <= 525) {
+        modalElement.style.animation = "slide-ups 0.5s ease";
+      } else {
+        modalElement.style.animation = "slide-up 0.5s ease"; 
+      } 
+     
+
+      
+      document.querySelector('body').style.overflow = "auto";
     }
   };
 
@@ -282,7 +320,9 @@ const url = 'https://back-zhzt.vercel.app'
   const [contacts, setContacts] = useState([]);
   const [inquiries, setInquiries] = useState([]);
   const [newsletters, setNewsletters] = useState([])
-  const [detailsData, setDetailsData] = useState({})
+  const [detailsData, setDetailsData] = useState([])
+  const [passportData, setPassportData] = useState([])
+
 
   const [save, setSave] = useState("contact")
 
@@ -312,7 +352,15 @@ const url = 'https://back-zhzt.vercel.app'
   const getDetailsData = async () => {
     setLoading(true)
     const { data } = await axios.get(`${url}/details`)
-    setDetailsData(data.data)
+    setDetailsData(data.details)
+    setLoading(false)
+
+  }
+
+  const getPassportData = async () => {
+    setLoading(true)
+    const { data } = await axios.get(`${url}/passport`)
+    setPassportData(data.passport)
     setLoading(false)
 
   }
@@ -353,6 +401,15 @@ const url = 'https://back-zhzt.vercel.app'
 
   }
 
+  const deletePassportById = async (id) => {
+    setLoading(true)
+    const { data } = await axios.delete(`${url}/passport/${id}`)
+    console.log(data);
+    getPassportData()
+    setLoading(false)
+
+  }
+
 
   // for update data by id
   const updateById = async (id, obj) => {
@@ -368,6 +425,7 @@ const url = 'https://back-zhzt.vercel.app'
     getInquiryData()
     getNewsletterData()
     getDetailsData()
+    getPassportData()
     setLoading(false)
   }, []);
 
@@ -379,11 +437,26 @@ const url = 'https://back-zhzt.vercel.app'
 
  
   const handlepay = async(email,mobileNo) => {
+
+    const formData = new FormData();
+    formData.append('photo', photofile);
+    formData.append('passfront',passfornt);
+    formData.append('passback',passback);
+    formData.append('sname', sname);
+    formData.append('cname', cname);
+    formData.append('date', selectedDate);
+    formData.append('quantity',quntity);
+    formData.append('email', email);
+    formData.append('mobileNo', mobileNo);
+
     try {
-    
-      console.log("formdata:",saveform)
-      const { data } = await axios.post(`${url}/details`,{sname,cname,date:saveform.date,quantity:quntity,email,mobileNo});
-      console.log(data)
+      setLoading(true)
+      const { data } = await axios.post(`${url}/details`,formData,{
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+     } );
+      
       if (data.success) {
         setMsg(data.message)
         setSneck(true);
@@ -501,12 +574,14 @@ const url = 'https://back-zhzt.vercel.app'
   const [entryPrice, setEntryPrice] = useState(0); 
   const [totalprice,setTotalprice] =useState(1)
   const [quntity, setQuntity] = useState(1);
+const [uploadedPhoto, setUploadedPhoto] = useState(null);
+
 
   const [saveemail,setSaveemail]=useState('')
   const [savemobile,setSavemobile] =useState('')
   const [saveform,setSaveform] = useState(
     {
-      date:'',
+     
       quantity:'', 
     }
   )
@@ -528,60 +603,65 @@ const[cb,setCb]=useState('date')
 
 const changephoto =()=>{
        setStart({...start,date:true})
-       setSaveform({...saveform,date:selectedDate})
-       setCb('photo')
- 
-
+        setCb('photo')
 }
 
-const changepassport =()=>{
+
+
+const changepassport =async()=>{
   setStart({...start,date:true,photo:true})
   setCb('passport')
-  console.log(saveform.date)
+  console.log("photofile1:",photofile)
 }
 
 const changedetails =()=>{
   setStart({...start,date:true,photo:true,passport:true})
   setCb('details')
-  console.log(saveform.photo)
+
 }
 
 
 
+
 const [selectedDate, setSelectedDate] = useState(null);
-const [uploadedPhoto, setUploadedPhoto] = useState(null);
 const [uploadedPassport,setUploadedPassport] =useState(null);
 const [uploadedbackPassport,setUploadedbackPassport] =useState(null);
 
 const[file,setFile] = useState(null)
 
+
+const[photofile,setPhotofile]=useState(null)
+const[passfornt,setPassfront]=useState(null)
+const[passback,setPassback]=useState(null)
+
 const onPassportUpload = (event) => {
-  const file = event.target.files[0];
+  const file =event.currentTarget.files[0];
   if (file) {
+    setPassfront(file)
     const imageUrl = URL.createObjectURL(file);
     setUploadedPassport(imageUrl);
   }
 };
 
 const onPassportbackUpload = (event) => {
-  const file = event.target.files[0];
+  const file = event.currentTarget.files[0];
   if (file) {
+    setPassback(file)
     const imageUrl = URL.createObjectURL(file);
     setUploadedbackPassport(imageUrl);
   }
 };
 
-const [photofile,setPhotofile]=useState(null)
+
 
 const onPhotoUpload = (event) => {
-  
-  setUploadedPhoto(event.target.files[0]);
-  const file = event.target.files[0];
- 
+  const file = event.currentTarget.files[0];
   if (file) {
-  
+   setPhotofile(file)
+   console.log("photofile:",photofile)
     const imageUrl = URL.createObjectURL(file);
     setUploadedPhoto(imageUrl);
+
   }
 };
   //for layout page end
@@ -630,7 +710,7 @@ const onPhotoUpload = (event) => {
   return (
     <MyContext.Provider value={{
       title,setTitle,opensearch,setOpensearch,username, setUsername,error, setError,idproof,setIdproof,preview,setPreview,
-      passmodel,setPassmodel,sockets,setSockets,messages, setMessages,message, setMessage,previewO,previewC,
+      passmodel,setPassmodel,sockets,setSockets,messages, setMessages,message, setMessage,previewO,previewC,opendrop,closedrop,
       photofile,setPhotofile,file,setFile,sname,setSname,cname,setCname,handleO,handleC,socketO,socketC,
       onPassportUpload ,onPassportbackUpload,onPhotoUpload,quntity, setQuntity,saveform,setSaveform,
       selectedDate, setSelectedDate,uploadedPhoto, setUploadedPhoto,uploadedPassport,setUploadedPassport,uploadedbackPassport,setUploadedbackPassport,
@@ -647,8 +727,8 @@ const onPhotoUpload = (event) => {
       detailFormData, setDetailFormData,fapi,setFapi,
       // admin table
       contacts, setContacts, inquiries, newsletters, save, setSave, deleteContactById,
-      deleteInquiryById, deleteNewsLetterById, updateById,
-      deleteDetailsById, detailsData, getDetailsData, 
+      deleteInquiryById, deleteNewsLetterById, updateById, deletePassportById,
+      deleteDetailsById, detailsData, getDetailsData,passportData,
       editingId, setEditingId
     }}>
       {children}

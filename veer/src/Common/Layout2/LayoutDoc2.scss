@@ -6,7 +6,7 @@
   max-width: 1200px;
 
   margin: 0 auto;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 85px);
   display: flex;
   
  @include max900{
@@ -21,6 +21,7 @@
     align-items: center;
     margin: 20px 0;
     gap: 10px;
+    height: 100%;
  
 
     @include max900{
@@ -80,6 +81,7 @@
   .layout-form{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width:100%;
+    height: 100%;
     
    
     @include max900{
@@ -405,7 +407,8 @@
 
   .layout-details{
     width: 500px;
-    height: 700px;
+    // height: 700px;
+    height: 100%;
     // overflow: auto;
     position: relative;
     

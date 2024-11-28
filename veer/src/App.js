@@ -11,7 +11,6 @@ import Loader from './Common/Loader/Loader'
 import Error from './Common/Error/Error'
 import Footer from './Footer/Footer'
 import ScrollToTop from "react-scroll-to-top";
-import { FaArrowUp } from "react-icons/fa";
 import { IoMdArrowUp } from "react-icons/io";
 // import SubHeader from './SubHeader/SubHeader'
 import GoToTop from './Common/Gototop/GoToTop'
@@ -20,7 +19,6 @@ import Explore from './Explore/Explore'
 import CountryPage from './CountryPage/CountryPage'
 import Admin from './Admin/Admin'
 import ErrorPage from './Common/ErrorPage/ErrorPage'
-
 import LayoutDoc3 from './Common/Layout3/LayoutDoc3.jsx'
 import LayoutDoc2 from './Common/Layout2/LayoutDoc2.jsx'
 import Passport from './Passport/Passport.jsx'

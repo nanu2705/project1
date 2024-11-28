@@ -22,7 +22,10 @@ const Admin = () => {
         deleteInquiryById,
         deleteNewsLetterById,
         deleteDetailsById,
+        deletePassportById,
         detailsData,
+        passportData,
+        url,
         // setUpdateTableData,
 
     } = useContext(MyContext);
@@ -56,6 +59,11 @@ const Admin = () => {
                         <div className="n-item" onClick={() => setSave("details")}>
                             <img src={formDetailsImg} alt="" />
                             <span>Serviceform Details</span>
+                        </div>
+
+                        <div className="n-item" onClick={() => setSave("passport")}>
+                            <img src={formDetailsImg} alt="" />
+                            <span>Passport Details</span>
                         </div>
                     </div>
                 </div>
@@ -184,10 +192,11 @@ const Admin = () => {
                                     <th>Country Name</th>
                                     <th>Email</th>
                                     <th>MobileNo</th>
-                                    {/* <th>Photo</th>
-                                    <th>Passport-front</th>
-                                    <th>Passport-back</th> */}
                                     <th>Quantity</th>
+                                    <th>Photo</th>
+                                    <th>Passport-front</th>
+                                    <th>Passport-back</th>
+                                    
                                     
                                 </tr>
 
@@ -201,11 +210,50 @@ const Admin = () => {
                                             <td>{item.cname}</td>
                                             <td>{item.email}</td>
                                             <td>{item.mobileNo}</td>
-                                              <td>{item.quantity}</td>
+                                            <td>{item.quantity}</td>
+                                            <td>
+  {item.photo?.path ? (
+    <a 
+      target="_blank" 
+      rel="noreferrer" 
+      download={item.photo.filename || "photo.jpg"} 
+      href={`${url}${item.photo.path}`}
+    >
+      Photo
+    </a>
+  ) : (
+    "No Photo"
+  )}
+</td>
+<td>
+  {item.passfront?.path ? (
+    <a 
+      target="_blank" 
+      rel="noreferrer" 
+      download={item.passfront.filename || "passport-front.jpg"} 
+      href={`${url}${item.passfront.path}`}
+    >
+      Passport-Front
+    </a>
+  ) : (
+    "No Passport Front"
+  )}
+</td>
+<td>
+  {item.passback?.path ? (
+    <a 
+      target="_blank" 
+      rel="noreferrer" 
+      download={item.passback.filename || "passport-back.jpg"} 
+      href={`${url}${item.passback.path}`}
+    >
+      Passport-Back
+    </a>
+  ) : (
+    "No Passport Back"
+  )}
+</td>
 
-                                            {/* <td><a target="_blank" rel="noreferrer" download="identity.jpg" href={url + '/' + item.identityProof}>Photo</a></td>
-                                            <td><a target="_blank" rel="noreferrer" href={url + '/' + item.birthProof}>Passport-front</a></td>
-                                            <td><a target="_blank" rel="noreferrer" href={url + '/' + item.addressProof}>Passport-back</a></td> */}
                                             <td>
                                                 <div className="actions-btn">
                                                     <div className="delete-btn">
@@ -226,44 +274,41 @@ const Admin = () => {
 
                    {save === "passport" && (
                         <div className="table-container">
-                            <h3>Serviceform Details</h3>
+                            <h3>Passport Details</h3>
                             <table>
                                 <tr>
                                     <th>Index</th>
                                     <th>Date&Time</th>
-                                    <th>Date</th>
-                                    <th>Service Name</th>
-                                    <th>Country Name</th>
-                                    <th>Photo Proof</th>
-                                    <th>DOB Proof</th>
-                                    {/* <th>Photo</th>
-                                    <th>Passport-front</th>
-                                    <th>Passport-back</th> */}
-                                    <th>Quantity</th>
+                                    <th>Photo</th>
+                                    <th>DOB</th>
+                                    <th>Address</th>
+                                    <th>NON-ECR</th>
+                                  
                                     
                                 </tr>
 
-                                {detailsData?.map((item, index) => {
+                                {passportData?.map((item, index) => {
                                     return (
                                         <tr key={index}>
                                             <td>{index + 1}</td>
                                             <td>{new Date(item.createdAt).toLocaleString()}</td>
-                                            <td>{new Date(item.date).toLocaleDateString('en-GB')}</td>
-                                            <td>{item.sname}</td>
-                                            <td>{item.cname}</td>
-                                            <td>{item.email}</td>
-                                            <td>{item.mobileNo}</td>
-                                              <td>{item.quantity}</td>
+                                           
+                                            {/* <td>{item.filename1}</td>
+                                            <td>{item.filename2}</td>   
+                                            <td>{item.filename3}</td> */}
+                                            
 
-                                            {/* <td><a target="_blank" rel="noreferrer" download="identity.jpg" href={url + '/' + item.identityProof}>Photo</a></td>
-                                            <td><a target="_blank" rel="noreferrer" href={url + '/' + item.birthProof}>Passport-front</a></td>
-                                            <td><a target="_blank" rel="noreferrer" href={url + '/' + item.addressProof}>Passport-back</a></td> */}
+                                           <td><a target="_blank" rel="noreferrer" download="identity.jpg" href={url + item.file1.path}>Photo</a></td>
+                                            <td><a target="_blank" rel="noreferrer" href={url + item.file2.path}>DOB</a></td>
+                                            <td><a target="_blank" rel="noreferrer" href={url + item.file3.path}>Address</a></td>
+                                            <td><a target="_blank" rel="noreferrer" href={url + item.file4.path}>NON-ECR</a></td>
+
                                             <td>
                                                 <div className="actions-btn">
                                                     <div className="delete-btn">
                                                         <RiDeleteBin5Line
                                                             size={"25px"}
-                                                            onClick={() => deleteDetailsById(item._id)}
+                                                            onClick={() => deletePassportById(item._id)}
                                                         />
                                                     </div>
                                                 </div>
@@ -273,7 +318,9 @@ const Admin = () => {
                                 })}
                             </table>
                         </div>
-                    )}
+                    )} 
+
+                    
                 </div>
             </div>
         </div>
