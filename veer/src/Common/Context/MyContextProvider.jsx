@@ -168,6 +168,7 @@ const url ="https://back-oyyd.vercel.app"
       setLoading(true)
         const response = await axios.get(`${url}/api/service-details`);
         setApi(response.data);
+        console.log(api)
       } catch (err) {
         console.error("Error fetching data:", err);
         setError(err.message);
