@@ -26,7 +26,7 @@ import { CiCircleQuestion } from "react-icons/ci";
 const CountryPage = () => {
 
     const { entryPrice,quntity,totalprice, setTotalprice, setEntryPrice,api, setPageData,setCountryName,pageData,
-           countryName,Navigate,setSaveform,saveform,setCname,setSname,idproof,setIdproof} = useContext(MyContext);
+           countryName,Navigate,setCname,setSname,idproof,setIdproof} = useContext(MyContext);
 
     const{ servicename,countryname } = useParams();
 
@@ -194,7 +194,7 @@ const CountryPage = () => {
                   <div  className={`start-app ${isFixed ? 'fixed' : ''}`}  onClick={() =>{
                
                Navigate('/layout')}}>
-               <button onClick={()=>setSaveform({...saveform,quantity:quntity}) || setSname(servicename) || setCname(countryname)}>Start Application</button>
+               <button onClick={setSname(servicename) || setCname(countryname)}>Start Application</button>
              </div>
             ):
              (
@@ -202,7 +202,7 @@ const CountryPage = () => {
                  <div  className={`start-app ${isFixed ? 'fixed' : ''}`}  onClick={() =>{
                
                Navigate('/layoutpassport')}}>
-               <button onClick={()=>setSaveform({...saveform,quantity:quntity}) || setSname(servicename) || setCname(countryname)}>Start Application</button>
+               <button onClick={setSname(servicename) || setCname(countryname)}>Start Application</button>
              </div>
                
 

@@ -6,7 +6,7 @@ import './Layoutbox.scss';
 import MyContext from '../Context/MyContext';
 
 const Layoutbox = () => {
-  const { url, setLoading, setSneck, setMsg,Navigate} = useContext(MyContext);
+  const {url, setLoading, setSneck, setMsg,Navigate} = useContext(MyContext);
 
  
 
