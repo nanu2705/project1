@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const Inquiry = () => {
 
-    const { setMsg, setLoading, setSneck, url } = useContext(MyContext)
+    const { setMsg, setLoading, setSneck} = useContext(MyContext)
 
     // Initial form values
     const initialValues = {
