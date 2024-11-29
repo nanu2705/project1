@@ -9,7 +9,7 @@ const MyContextProvider = ({ children }) => {
   const location = useLocation()
 
   //for backend calling api start
-const url ="https://back-oyyd.vercel.app"
+const url ="https://back-adxe.vercel.app"
 
   // for login drawer open start
   const [isOpen, setIsOpen] = useState(false)
