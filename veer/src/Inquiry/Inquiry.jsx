@@ -26,11 +26,13 @@ const Inquiry = () => {
     });
 
     const onSubmit = async (values, { resetForm }) => {
+        console.log('Submitting values:', values);
         try {
             setLoading(true)
             document.querySelector('body').style.overflow = 'hidden'
-            const { data } = await axios.post(`${url}/inquiry`, values)
-            console.log(data)
+            const { data } = await axios.post('/inquiry', values)
+           
+            console.log('API Response:', data);
             if (data.success) {
                 setMsg(data.message)
                 setSneck(true)

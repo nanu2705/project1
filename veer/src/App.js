@@ -6,7 +6,6 @@ import Search from './Common/Search/Search'
 import MyContextProvider from './Common/Context/MyContextProvider'
 import ContactBatch from './Common/ContactBatch/ContactBatch'
 import Contact from './Contact/Contact'
-
 import Loader from './Common/Loader/Loader'
 import Error from './Common/Error/Error'
 import Footer from './Footer/Footer'
@@ -23,7 +22,6 @@ import LayoutDoc3 from './Common/Layout3/LayoutDoc3.jsx'
 import LayoutDoc2 from './Common/Layout2/LayoutDoc2.jsx'
 import Passport from './Passport/Passport.jsx'
 import Modal from './Passport/Modal.jsx'
-import Adminform from './Admin/Adminform.jsx'
 import Layoutbox from './Common/Layoutbox/Layoutbox.jsx'
 
 
@@ -55,7 +53,6 @@ const App = () => {
           <Route path='/service/:servicename/:countryname' element={<CountryPage />} />
           <Route path='/explore' element={<Explore />} />
           <Route path='/adminveer' element={<Admin />} />
-          <Route path='/adminform' element={<Adminform />} />
           <Route path="*" element={<ErrorPage />} />
           <Route path="/confirm" element={<LayoutDoc3 />} />
           <Route path="/layout" element={<LayoutDoc2/>}/>

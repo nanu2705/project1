@@ -107,7 +107,8 @@ const CountryPage = () => {
         <div className='country-page'>
 <Helmet>
         <title>{servicename}/{countryname}</title>
-        <meta name="description" content="Contact page" />
+        <meta name="Welcome to our Country Visa Page! Here, you can find all the essential details about visa services for different countries, including visitor visas, student visas, work visas, and more. Whether you're planning to study abroad, work in another country, or explore a new destination, we’ve got you covered with comprehensive visa information." 
+        content="Country page" />
       </Helmet>
      
      

@@ -25,7 +25,8 @@ const ErrorPage = () => {
     <div className="error-page">
       <Helmet>
         <title>Error: 404</title>
-        <meta name="description" content="Page not found - Error 404" />
+        <meta name="Oops! It looks like the page you're looking for doesn't exist or has been moved. We couldn't find the page at the link you provided. Don’t worry – you can still explore the rest of our website or search for the content you need." 
+        content="Page not found - Error 404" />
       </Helmet>
 
       <div className="error-content">

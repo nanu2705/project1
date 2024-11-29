@@ -63,7 +63,8 @@ const Contact = () => {
 
 <Helmet>
         <title>Contact</title>
-        <meta name="description" content="Contact page" />
+        <meta name="We’d love to hear from you! Whether you have a question, feedback, or need assistance, our team is here to help. Use the form below to send us a message, or reach out via email or phone.
+                If you're looking for support, please provide as much detail as possible so we can assist you better. For inquiries, we’ll respond within 1-2 business days." content="Contact page" />
       </Helmet>
       <h3>Let's Talk</h3>
     
