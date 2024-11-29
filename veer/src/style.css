@@ -1,0 +1,14 @@
+button {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 1000;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  

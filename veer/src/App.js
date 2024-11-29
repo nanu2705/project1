@@ -62,7 +62,26 @@ const App = () => {
           
         </Routes>
         <Error />
-        <ScrollToTop smooth component={<IoMdArrowUp style={{ position: 'fixed', bottom: '50px', right: '47px', zIndex: 1000, color:'white'}} size={25} />} />
+        <ScrollToTop
+        smooth
+        top={100}
+        color="white"
+        width="50px"
+        height="50px"
+        component={
+          <IoMdArrowUp
+            style={{
+              position: "fixed",
+              bottom: "49px",
+              right: "48px",
+              zIndex: 1000,
+              color: "white",
+              fontSize: "25px", 
+            }}
+          />
+        }
+      />
+   
         <GoToTop />
         <Footer />
       </MyContextProvider>
