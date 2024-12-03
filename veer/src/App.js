@@ -23,6 +23,7 @@ import LayoutDoc2 from './Common/Layout2/LayoutDoc2.jsx'
 import Passport from './Passport/Passport.jsx'
 import Modal from './Passport/Modal.jsx'
 import Layoutbox from './Common/Layoutbox/Layoutbox.jsx'
+import Newsad from './Common/Newspaper/Newsad.jsx'
 
 
 
@@ -58,6 +59,8 @@ const App = () => {
           <Route path="/layout" element={<LayoutDoc2/>}/>
           <Route path="/layoutpassport" element={<Layoutbox/>}/>
           <Route path="/passport/:title" element={<Passport/>}/>
+          <Route path="/newsad" element={<Newsad/>}/>
+
          
           
         </Routes>

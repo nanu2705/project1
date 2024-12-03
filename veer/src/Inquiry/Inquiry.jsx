@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const Inquiry = () => {
 
-    const { setMsg, setLoading, setSneck} = useContext(MyContext)
+    const { setMsg, setLoading, setSneck,url} = useContext(MyContext)
 
     // Initial form values
     const initialValues = {
@@ -30,7 +30,7 @@ const Inquiry = () => {
         try {
             setLoading(true)
             document.querySelector('body').style.overflow = 'hidden'
-            const { data } = await axios.post('/inquiry', values)
+            const { data } = await axios.post(`${url}/inquiry`, values)
            
             console.log('API Response:', data);
             if (data.success) {

@@ -23,6 +23,21 @@ const detailSchema = new mongoose.Schema({
         type: String,
        
     },
+    photo:{
+        filename: String,
+        path: String,
+        size: Number,
+    },
+    passfront:{
+        filename: String,
+        path: String,
+        size: Number,
+    },
+    passback:{
+        filename: String,
+        path: String,
+        size: Number,
+    },
    
     createdAt: { type: Date, default: Date.now }
 

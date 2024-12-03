@@ -388,7 +388,7 @@
                     "lengthOfStay": "90 days",
                     "validity": "3 years",
                     "entry": "Multiple",
-                    "entryprice":100
+                    "entryprice":21950
                 },
                 "countryImages": [
                     "/city/australia1.jpg",
@@ -397,18 +397,9 @@
                     "/city/australia4.jpg",
                     "/city/australia5.jpg"
                 ],
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
+                "pricing": {
+                        "price": 10000
                     },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
                 "img": "/flags/usa.png",
                 "documents": [
                     "Passport",
@@ -440,7 +431,7 @@
                     "lengthOfStay": "90 days",
                     "validity": "3 years",
                     "entry": "Multiple",
-                    "entryprice":100
+                    "entryprice":21950
                 },
                 "countryImages": [
                     "/city/australia1.jpg",
@@ -449,18 +440,10 @@
                     "/city/australia4.jpg",
                     "/city/australia5.jpg"
                 ],
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
+                "pricing": 
+                    {   
+                        "price": 13000
                     },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
                 "img": "/flags/canada.png",
                 "details": [
                     "Passport",
@@ -492,7 +475,7 @@
                     "lengthOfStay": "90 days",
                     "validity": "3 years",
                     "entry": "Multiple",
-                    "entryprice":100
+                    "entryprice":13007
                 },
                 "countryImages": [
                     "/city/australia1.jpg",
@@ -501,18 +484,10 @@
                     "/city/australia4.jpg",
                     "/city/australia5.jpg"
                 ],
-                "pricing": [
+                "pricing": 
                     {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
+                        "price": 9000
                     },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
                 "img": "/flags/united-kingdom.png",
                 "details": [
                     "Passport",
@@ -540,49 +515,118 @@
                 "name": "australia",
                 "title": "Australia",
                 "visaInformation": {
-                    "visaType": "E-visa",
-                    "lengthOfStay": "90 days",
-                    "validity": "3 years",
-                    "entry": "Multiple",
-                    "entryprice":100
+                  "visaType": "E-visa",
+                  "lengthOfStay": "90 days",
+                  "validity": "3 years",
+                  "entry": "Multiple",
+                  "entryprice": 3950
                 },
                 "countryImages": [
-                    "/city/australia1.jpg",
-                    "/city/australia2.jpg",
-                    "/city/australia3.jpg",
-                    "/city/australia4.jpg",
-                    "/city/australia5.jpg"
+                  "/city/australia1.jpg",
+                  "/city/australia2.jpg",
+                  "/city/australia3.jpg",
+                  "/city/australia4.jpg",
+                  "/city/australia5.jpg"
                 ],
-                "pricing": [
+                "pricing": 
                     {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
+                        "price": 7800
                     },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
                 "img": "/flags/australia.png",
                 "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
+                  "Passport",
+                  "Study Permit Application Form",
+                  "Fee Receipt",
+                  "Photo",
+                  "Letter of Acceptance",
+                  "Financial Proof",
+                  "Medical Exam (if applicable)",
+                  "Home Ties"
                 ],
-                "documents": [
-                    "Passport",
-                    "Photo",
-                    "Bank Statement",
-                    "Income Tax Return(ITR)"
-                ]
-            },
+                "documents": {
+                  "spouse": [
+                    {
+                      "id": 1,
+                      "name": "Marriage Certificate"
+                    },
+                    {
+                      "id": 2,
+                      "name": "Proof of Relationship",
+                      "container": [
+                        {
+                          "id": 2,
+                          "name": "Joint bank account statements"
+                        },
+                        {
+                          "id": 2,
+                          "name": "Utility bills in both names"
+                        },
+                        {
+                          "id": 2,
+                          "name": "Photographs of family events (for spouse applications)"
+                        }
+                      ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "Dependent Declaration Form",
+                        "container": [
+                          {
+                            "id": 3,
+                            "name": "A declaration that the dependent will be supported financially and otherwise by the sponsor."
+                          }
+                        ]
+                      },
+                      {
+                        "id": 4,
+                        "name": "Sponsor's Documents"
+                      },
+                      {
+                        "id": 5,
+                        "name": "Sponsor's Visa Copy"
+                      },
+                      {
+                        "id": 6,
+                        "name": "Proof of Residency",
+                        "container": [
+                            {
+                              "id": 6,
+                              "name":"Recent bank statements"
+                            },
+                            {
+                                "id": 6,
+                                "name":"Salary slips or proof of income"
+                              }
+                          ]
+                      }
+                  ],
+                  "child": [
+                    {
+                        "id": 1,
+                        "name": "Birth Certificate"
+                      }
+                  ],
+                  "normal": [
+                    
+                    {
+                      "id": 1,
+                      "name": "Passport"
+                    },
+                    {
+                      "id": 2,
+                      "name": "Photo"
+                    },
+                    {
+                      "id": 3,
+                      "name": "Bank Statement"
+                    },
+                    {
+                      "id": 4,
+                      "name": "Income Tax Return(ITR)"
+                    }
+                  ]
+                }
+            }, 
             {
                 "id": 5,
                 "name": "vietnam",
@@ -592,7 +636,7 @@
                     "lengthOfStay": "30 days",
                     "validity": "30 days",
                     "entry": "single",
-                    "entryprice":100
+                    "entryprice":2150
                 },
                 "countryImages": [
                     "/city/vietnam1.jpg",
@@ -601,18 +645,10 @@
                     "/city/vietnam4.webp",
                     "/city/vietnam5.jpg"
                 ],
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
+                "pricing": 
+                    {  
+                        "price": 3000
                     },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
                 "img": "/flags/vietnam.png",
                 "details": [
                     "Passport",
@@ -638,7 +674,7 @@
                     "lengthOfStay": "90 days",
                     "validity": "3 years",
                     "entry": "Multiple",
-                    "entryprice":100
+                    "entryprice":2000
                 },
                 "countryImages": [
                     "/city/australia1.jpg",
@@ -647,18 +683,10 @@
                     "/city/australia4.jpg",
                     "/city/australia5.jpg"
                 ],
-                "pricing": [
+                "pricing": 
                     {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
+                        "price": 5500
                     },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
                 "img": "/flags/france.png",
                 "details": [
                     "Passport",
@@ -690,7 +718,7 @@
                     "lengthOfStay": "30 days",
                     "validity": "60 days",
                     "entry": "Single",
-                    "entryprice":10
+                    "entryprice":5950
                 },
                 "countryImages": [
                     "/city/uae1.jpg",
@@ -699,18 +727,11 @@
                     "/city/uae4.jpg",
                     "/city/uae5.jpg"
                 ],
-                "pricing": [
+                "pricing": 
                     {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
+                     
+                        "price": 2000
                     },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
                 "img": "/flags/uae.jpg",
                 "documents": [
                     "Photo",
@@ -731,7 +752,7 @@
                     "lengthOfStay": "90 days",
                     "validity": "3 years",
                     "entry": "Multiple",
-                    "entryprice":100
+                    "entryprice":1500
                 },
                 "countryImages": [
                     "/city/germany1.jpg",
@@ -740,18 +761,9 @@
                     "/city/germany4.jpg",
                     "/city/germany5.jpg"
                 ],
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
+                "pricing": {
+                        "price": 4000
+                },
                 "img": "/flags/germany.png",
                 "documents": [
                     "Passport",
@@ -1348,294 +1360,34 @@
         "country": [
             {
                 "id": 1,
-                "name": "pcc-for-usa",
-                "title": "Pcc for USA",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flags/usa.png",
+                "name": "pcc",
+                "title": "PCC",
+                
+                "img": "/images/pcc.jpg",
                 "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "ID Proof",
-                    "Address Proof",
-                    "Fingerprinting (if required)",
-                    "Fee Payment",
-                    "Photo"
+                    "Get your Police Clearance Certificate quickly and easily. Hassle-free application with expert assistance. Apply today!",
+                    "Have questions or need help? Reach out to us for quick and reliable support. We’re here to assist you!"
                 ]
-            },
-            {
-                "id": 2,
-                "name": "pcc-for-canada",
-                "title": "Pcc for Canada",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flags/canada.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "ID Proof",
-                    "Address Proof",
-                    "Fingerprinting (if required)",
-                    "Fee Payment",
-                    "Photo"
-                ]
-            },
-            {
-                "id": 3,
-                "name": "pcc-for-united-kingdom",
-                "title": "Pcc for United Kingdom",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flags/united-kingdom.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "ID Proof",
-                    "Address Proof",
-                    "Fingerprinting (if required)",
-                    "Fee Payment",
-                    "Photo"
-                ]
-            },
-            {
-                "id": 4,
-                "name": "pcc-for-australia",
-                "title": "Pcc for Australia",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flags/australia.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "ID Proof",
-                    "Address Proof",
-                    "Fingerprinting (if required)",
-                    "Fee Payment",
-                    "Photo"
-                ]
-            },
-            {
-                "id": 5,
-                "name": "pcc-for-europe",
-                "title": "Pcc for Europe",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flags/eu.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "ID Proof",
-                    "Address Proof",
-                    "Fingerprinting (if required)",
-                    "Fee Payment",
-                    "Photo"
-                ]
-            },
-            {
-                "id": 6,
-                "name": "pcc-for-france",
-                "title": "Pcc for France",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flags/france.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "ID Proof",
-                    "Address Proof",
-                    "Fingerprinting (if required)",
-                    "Fee Payment",
-                    "Photo"
-                ]
+               
             }
+           
         ]
     },
     {
         "id": 6,
-        "name": "aadhar-card",
-        "title": "Aadhar Card",
-        "desc": "Quick and efficient solutions for all your Aadhaar card needs.",
+        "name": "iso-certificate",
+        "title": "ISO Certificate",
+        "desc": "Quick and efficient solutions for all your ISO Certi needs.",
         "icon": "/flaticons/s7.png",
         "country": [
             {
                 "id": 1,
-                "name": "new-aadhar-card",
-                "title": "New Aadhar Card",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
+                "name": "iso-certificate",
+                "title": "ISO Certificate",
                 "img": "/flaticons/create.png",
                 "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "ID Proof",
-                    "Address Proof",
-                    "Date of Birth Proof",
-                    "Photo"
-                ]
-            },
-            {
-                "id": 2,
-                "name": "update-aadhar-card",
-                "title": "Update Aadhar Card",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flaticons/update.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Aadhaar Number",
-                    "Supporting Document for change",
-                    "Photo"
+                  "Get your ISO Certi with ease! From new enrollments to updates, we guide you through a simple, hassle-free process.",
+                  "Have questions? Reach out to us for reliable support. We're here to help with all your queries—contact us now!"
                 ]
             }
         ]
@@ -1649,138 +1401,12 @@
         "country": [
             {
                 "id": 1,
-                "name": "new-pancard",
-                "title": "New Pancard",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
+                "name": "pan_card",
+                "title": "Pan Card",
                 "img": "/flaticons/create.png",
                 "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "ID Proof",
-                    "Address Proof",
-                    "Date of Birth Proof",
-                    "Photo"
-                ]
-            },
-            {
-                "id": 2,
-                "name": "update-pancard",
-                "title": "Update Pancard",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flaticons/update.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Pan card",
-                    "Supporting Document for change",
-                    "Photo"
-                ]
-            },
-            {
-                "id": 3,
-                "name": "new-pancard-for-nri",
-                "title": "New Pancard For NRI",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flaticons/create.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "ID Proof",
-                    "Address Proof",
-                    "Date of Birth Proof",
-                    "Photo"
-                ]
-            },
-            {
-                "id": 4,
-                "name": "update-pancard-for-nri",
-                "title": "Update Pancard For NRI",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flaticons/update.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form 49A",
-                    "Supporting Document for Change",
-                    "Photo"
+                   "Get your PAN card easily with our fast, secure online application process. Simple steps, quick approval, and expert assistance every step of the way.",
+                   "Have questions? Our team is here to help! Reach out today for support on PAN card applications, and more."
                 ]
             }
         ]
@@ -1794,105 +1420,12 @@
         "country": [
             {
                 "id": 1,
-                "name": "new-election-card",
-                "title": "New Election Card",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
+                "name": "election-card",
+                "title": "Election Card",
                 "img": "/flaticons/create.png",
                 "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "ID Proof",
-                    "Address Proof",
-                    "Age Proof",
-                    "Photo"
-                ]
-            },
-            {
-                "id": 2,
-                "name": "update-election-card",
-                "title": "Update Election Card",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flaticons/update.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "Existing Election Card",
-                    "Supporting Document",
-                    "Photo"
-                ]
-            },
-            {
-                "id": 3,
-                "name": "cancel-election-card",
-                "title": "Cancel Election Card",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flaticons/cancel.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "Existing Election Card",
-                    "Death certificate",
-                    "ID Proof"
+                   "Apply for your Election Card easily with our team. Ensure your eligibility to vote and get your voter ID card hassle-free. Be a part of the democratic process!",
+                   "Have questions? Reach out to us today!Our team is here to help you. Contact us now for fast and friendly service."
                 ]
             }
         ]
@@ -1906,73 +1439,12 @@
         "country": [
             {
                 "id": 1,
-                "name": "new-gst",
-                "title": "New GST",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
+                "name": "gst",
+                "title": "GST",
                 "img": "/flaticons/create.png",
                 "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "PAN Card",
-                    "Business Registration Proof",
-                    "ID Proof",
-                    "Address Proof",
-                    "Bank Statement/Cheque",
-                    "Photographs"
-                ]
-            },
-            {
-                "id": 2,
-                "name": "update-gst",
-                "title": "Update GST",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flaticons/update.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "PAN Card",
-                    "GST Certificate",
-                    "Supporting Document",
-                    "Bank Statement",
-                    "Photographs"
+                   "Easily apply for GST registration with our secure process. Get expert guidance, fast approval, and ensure compliance for your business today!",
+                   "Have questions? Reach out to us for expert advice and support. Our team is here to assist you every step of the way!"
                 ]
             }
         ]
@@ -1986,72 +1458,12 @@
         "country": [
             {
                 "id": 1,
-                "name": "new-driving-license",
-                "title": "New Driving License",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
+                "name": "driving-license",
+                "title": "Driving License",
                 "img": "/flaticons/create.png",
                 "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "ID Proof",
-                    "Address Proof",
-                    "DOB Proof",
-                    "Photos",
-                    "Learner's License"
-                ]
-            },
-            {
-                "id": 2,
-                "name": "update-driving-license",
-                "title": "Update Driving License",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flaticons/update.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "Existing License",
-                    "Supporting Document",
-                    "Photos"
+                   "Get your driving license with ease! Our simple and quick application process ensures you’re on the road in no time.",
+                   "Have questions? Reach out to us today for expert assistance with your passport, visa, or driving license needs. We're here to help!"
                 ]
             }
         ]
@@ -2065,72 +1477,12 @@
         "country": [
             {
                 "id": 1,
-                "name": "new-income-certificate",
-                "title": "New Income Certificate",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
+                "name": "income-certificate",
+                "title": "Income Certificate",
                 "img": "/flaticons/create.png",
                 "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "ID Proof",
-                    "Address Proof",
-                    "Income Proof",
-                    "Self-declaration (if required)"
-                ]
-            },
-            {
-                "id": 2,
-                "name": "update-income-certificate",
-                "title": "Update Income Certificate",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flaticons/update.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "Existing Certificate",
-                    "ID Proof",
-                    "Updated Income Proof",
-                    "Address Proof"
+                  "Apply for Income-Certificate online with us. Our simple process ensures quick approval making it easier for you to access government benefits.",
+                  "Have questions? Get in touch with our team for prompt assistance. We’re here to help with all your certificate needs!"
                 ]
             }
         ]
@@ -2144,107 +1496,12 @@
         "country": [
             {
                 "id": 1,
-                "name": "claim-pf",
-                "title": "Claim PF",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
+                "name": "pf",
+                "title": "PF",
                 "img": "/flaticons/claim.png",
                 "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "Existing Certificate",
-                    "ID Proof",
-                    "Updated Income Proof",
-                    "Address Proof"
-                ]
-            },
-            {
-                "id": 2,
-                "name": "kyc-update-for-pf",
-                "title": "KYC Update For PF",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flaticons/kyc.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "Existing Certificate",
-                    "ID Proof",
-                    "Updated Income Proof",
-                    "Address Proof"
-                ]
-            },
-            {
-                "id": 3,
-                "name": "transfer-pf",
-                "title": "Transfer PF",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flaticons/pft.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "Existing Certificate",
-                    "ID Proof",
-                    "Updated Income Proof",
-                    "Address Proof"
+                   "Apply for your Provident Fund with ease. Our simple process ensures quick submission and timely updates, so you can manage your savings effortlessly.",
+                   "Have questions? Reach out to us today! Our team is here to assist you with any inquiries or support you need."
                 ]
             }
         ]
@@ -2258,72 +1515,12 @@
         "country": [
             {
                 "id": 1,
-                "name": "new-ration-card",
-                "title": "New Ration Card",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
+                "name": "ration-card",
+                "title": "Ration Card",
                 "img": "/flaticons/create.png",
                 "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "ID Proof",
-                    "Address Proof",
-                    "Income Proof (if required)",
-                    "Photo"
-                ]
-            },
-            {
-                "id": 2,
-                "name": "update-ration-card",
-                "title": "Update Ration Card",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flaticons/update.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "Existing Card",
-                    "ID Proof",
-                    "Address Proof",
-                    "Photo"
+                  "Get your ration card quickly with simple application process.We provide assistance to ensure your application is processed efficiently.",
+                  "Have questions? Reach out to us today for prompt and reliable support. Our team is here to assist you with all your inquiries."
                 ]
             }
         ]
@@ -2337,75 +1534,12 @@
         "country": [
             {
                 "id": 1,
-                "name": "new-msme-registration",
-                "title": "New MSME Registration",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
+                "name": "msme-registration",
+                "title": "MSME Registration",
                 "img": "/flaticons/create.png",
                 "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "Aadhaar Number",
-                    "PAN Card",
-                    "Business Registration (if applicable)",
-                    "Bank Details",
-                    "Address Proof",
-                    "Investment Proof"
-                ]
-            },
-            {
-                "id": 2,
-                "name": "update-msme-registration",
-                "title": "Update MSME Registration",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
-                "img": "/flaticons/update.png",
-                "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Application Form",
-                    "Existing Certificate",
-                    "Aadhaar Number",
-                    "PAN Card",
-                    "Updated Address Proof",
-                    "Investment Proof"
+                    "Get your MSME registration today with ease. Our simple process helps you register your business for growth and benefits under government schemes.",
+                    "Have questions? Reach out to us today for expert assistance with MSME registration."
                 ]
             }
         ]
@@ -2419,38 +1553,12 @@
         "country": [
             {
                 "id": 1,
-                "name": "create-newspaper-ads",
-                "title": "Create Newspaper Ads",
-                "pricing": [
-                    {
-                        "id": 1,
-                        "name": "single-entry",
-                        "price": 700
-                    },
-                    {
-                        "id": 2,
-                        "name": "multiple-entry",
-                        "price": 1200
-                    }
-                ],
+                "name": "newspaper-ads",
+                "title": "Newspaper Ads",
                 "img": "/flaticons/newspaperadd.png",
                 "details": [
-                    "Passport",
-                    "Study Permit Application Form",
-                    "Fee Receipt",
-                    "Photo",
-                    "Letter of Acceptance",
-                    "Financial Proof",
-                    "Medical Exam (if applicable)",
-                    "Home Ties"
-                ],
-                "documents": [
-                    "Ad Content",
-                    "Ad Size",
-                    "Publication Name",
-                    "Publication Date",
-                    "Contact Info",
-                    "Payment Details"
+                   "Get your message noticed with our newspaper advertising services. We help you craft the perfect ad and ensure it reaches your target audience.",
+                   "Have questions? Our team is ready to help with all your inquiries. Get in touch now for fast support."
                 ]
             }
         ]
